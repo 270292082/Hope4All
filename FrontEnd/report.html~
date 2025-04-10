@@ -1,0 +1,11 @@
+<head>
+	<title>Report Missing Person</title>
+	<link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+	<div class="header">
+		<label><b>Report Missing Person</b></label>
+		<img src="ressources/cross.png"></img>
+	</div>
+</body>
