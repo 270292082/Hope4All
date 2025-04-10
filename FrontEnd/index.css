@@ -1,15 +1,28 @@
+
+label {
+	font-family: "Open Sans";
+}
+
+body {
+	background-color: #F7F0ED;
+}
+
+.page {
+	height: 100%;
+	width: 100%;
+}
+
 .banner {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	position: absolute;
+	position: fixed;
 
-	top:0px;
-	left:0px;
+	top: 0px;
+	left: 0px;
 
-	padding: 10px;
 
-	height: 80px;
+	height: 10vh; 
 	width: 100%;
 	background-color: #e94f4f;
 
@@ -17,60 +30,61 @@
 }
 
 .banner .logo {
-	height: 100%;
+	height: 80%;
 	width: auto;
-	padding-left: 2%;
-	padding-right: 4%;
+	margin-left: 2%;
+	margin-right: 4%;
 }
 
 .banner .search {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: 50%;
+	height: 60%;
 	width: 60%;
+
 
 	border-radius: 30px;
 
-	background-color: white;
-	padding: 10px;
+	background-color: #F7F0ED;
 
 }
 
+
 .banner .searchBar {
-	height: 100%;
+	height: 80%;
 	width: 100%;
 	font-size: 18px;
-	padding-left: 3%;
-	padding-right: 2%;
+	margin-right: 2%;
+	margin-left: 2%;
 	border: none;
 	outline: none;
+	background-color: #F7F0ED;
 }
 
 .banner .filterLogo {
-	height: 100%;
+	height: 70%;
 	width: auto;
-	padding-right: 3%;
+	margin-right: 3%;
 }
 
 .banner .searchLogo {
-	height: 100%;
+	height: 70%;
 	width: auto;
-	padding-right: 3%;
+	margin-right: 3%;
 }
 
 .banner .bell {
-	padding-left: 4%;
-	height: 60%;
+	height: 40%;
 	width: auto;
 }
 
 .banner .languageContainer {
-	padding-right: 2%;
-	padding-left: 2%;
+	margin-right: 2%;
+	margin-left: 2%;
 
 	height: 50%;
-	width: 80px;
+	width: 6vw;
 }
 
 .banner .language {
@@ -82,27 +96,27 @@
 	height: 100%;
 	width: 100%;
 
-	gap: 5px;
-
-	background-color: white;
-	border-radius: 5px;
+	background-color: #F7F0ED;
+	border-radius: 40px;
 }
 
 .banner .language .languageIco {
 	height: 80%;
 	width: auto;
-	padding-left: 5px;
+	margin-left: 0.8vw; 
 }
 
 .banner .language .language-current {
-	padding-right: 10px;
+	margin-right: 1vw;
+	font-size: clamp(1px, 1vw, 1vw);
+
 }
 
 
 .helpContainer {
 	position: relative;
 
-	padding-top: 90px;
+	margin-top: 10.5vh;
 
 	height: 3%;
 	width: 100%;
@@ -110,10 +124,10 @@
 
 .helpContainer img {
 	float: right;
-	padding-right: 10px;
-	padding-top: 5px;
+	padding-right: 0.6vw;
+	padding-top: 0.6vh;
 
-	height: 100%;
+	height: 3vh;
 	width: auto;
 }
 
@@ -152,12 +166,12 @@
 .reportContainer .report label {
 	padding-right: 30px;
 	font-size: clamp(14px, 2vw, 45px); 
-	color: white;
+	color: #F7F0ED;
 }
 
 
 .incidents{
-	padding-top: 2%;
+	margin-top: 2%;
 }
 
 .incidents .recent {
@@ -258,20 +272,25 @@
 .close {
 	display: flex;
 	position: absolute;
-	height: 10px;
+	height: 35px;
 	width: auto;
 
-	top: 5px;
-	right: 5px;
+	top: 18px;
+	right: 10px;
 }
 
 .header {
 	display: flex;
 	position: relative;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
 
-	height: 60px;
+	height: 50px;
 	width: 100%;
+}
+
+.header label {
+	font-family: "Open Sans";
+	font-size: 35px;
 }
 
