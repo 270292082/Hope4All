@@ -9,7 +9,7 @@
 	padding-top: 10px;
 	padding-bottom: 10px;
 
-	height: 8%;
+	height: 80px;
 	width: 100%;
 	background-color: #e94f4f;
 }
@@ -17,7 +17,8 @@
 .banner .logo {
 	height: 100%;
 	width: auto;
-	padding-left: 40px;
+	padding-left: 2%;
+	padding-right: 4%;
 }
 
 .banner .search {
@@ -25,7 +26,7 @@
 	justify-content: space-between;
 	align-items: center;
 	height: 50%;
-	width: 50%;
+	width: 60%;
 
 	border-radius: 30px;
 
@@ -36,7 +37,7 @@
 
 .banner .searchBar {
 	height: 100%;
-	width: 90%;
+	width: 100%;
 	font-size: 16px;
 	border: none;
 	outline: none;
@@ -45,20 +46,24 @@
 .banner .filterLogo {
 	height: 100%;
 	width: auto;
+	padding-right:2%;
 }
 
 .banner .searchLogo {
 	height: 100%;
 	width: auto;
+	padding-right: 2%;
 }
 
 .banner .bell {
+	padding-left: 4%;
 	height: 60%;
 	width: auto;
 }
 
 .banner .languageContainer {
-	padding-right: 40px;
+	padding-right: 2%;
+	padding-left: 2%;
 
 	height: 50%;
 	width: 80px;
