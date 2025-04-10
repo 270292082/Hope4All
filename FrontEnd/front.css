@@ -151,7 +151,7 @@
 
 .reportContainer .report label {
 	padding-right: 30px;
-	font-size: 40px;
+	font-size: clamp(14px, 2vw, 45px); 
 	color: white;
 }
 
@@ -165,13 +165,13 @@
 	justify-content: space-between;
 	position: relative;	
 
-	height: 30%;
+	height: 35%;
 	width: 100%;
 
 }
 
 .incidents .recent .info label { 
-	font-size: 22px;
+	font-size: clamp(14px, 2vw, 22px);
 }
 
 .incidents .recent .info {
@@ -204,3 +204,47 @@
 	padding-right: 60px;
 }
 
+
+.incidents .local {
+	display: flex;
+	justify-content: space-between;
+	position: relative;	
+
+	height: 35%;
+	width: 100%;
+
+}
+
+.incidents .local .info label { 
+	font-size: clamp(14px, 2vw, 22px);
+}
+
+.incidents .local .info {
+	display: flex;
+	justify-content: space-between;
+	position: relative;	
+
+	height: 10%;
+	width: 100%;
+
+}
+
+.incidents .local .info .left {
+	display: flex;
+	justify-content: flex-start;
+	padding-left: 30px;
+	height: 100%;
+	width: 100%;
+}
+
+.incidents .local .info .right {
+	display: flex;
+	justify-content: flex-end;
+	
+	height: 100%;
+	width: 100%;
+}
+
+.incidents .local .info .right label {
+	padding-right: 60px;
+}
