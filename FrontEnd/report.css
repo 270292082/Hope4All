@@ -1,0 +1,97 @@
+.close {
+	display: flex;
+	position: absolute;
+	height: 35px;
+	width: auto;
+
+	top: 18px;
+	right: 10px;
+}
+
+.header {
+	display: flex;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+
+	height: 50px;
+	width: 100%;
+}
+
+.header label {
+	font-family: "Open Sans";
+	font-size: 35px;
+}
+
+.content {
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 16px;
+
+    width: 90%;
+    height: 90vh;
+}
+
+.content .profile-picture {
+    position: absolute;
+    background-color: lightgrey;
+    border-radius: 10px;
+    height: 34vh;
+    width: 28vw;
+}
+
+.content .field1 {
+    top: 0;
+    margin-left: 35%;
+
+    width: 65%;
+    height: 32%;
+    
+}
+
+.content .field2 {
+    position: absolute;
+    margin-top: 8vh;
+}
+
+.content input {
+    justify-content: flex-end;
+    background-color: lightgrey;
+    color: black;
+    border: 0px;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    font-family: "Open Sans";
+}
+
+.content .field2 .imissdate {
+    width: 49%;
+}
+
+.content .field2 .irelated {
+    width: 50%;
+}
+
+.content .field2 .ilastlocation {
+    width: 69%;
+}
+
+.content .field2 .icountry {
+    width: 30%;
+}
+
+.content .field2 .ireportername {
+    width: 49%;
+}
+
+.content .field2 .irelation {
+    width: 50%;
+}
+
+.content .field2 .inotes {
+    width: 100%;
+    height: 20%;
+}
