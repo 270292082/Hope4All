@@ -1,0 +1,81 @@
+.close {
+	display: flex;
+	position: absolute;
+	height: 35px;
+	width: auto;
+
+	top: 18px;
+	right: 10px;
+}
+
+.header {
+	display: flex;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+
+	height: 50px;
+	width: 100%;
+}
+
+.header label {
+	font-family: "Open Sans";
+	font-size: 35px;
+}
+
+.content {
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 16px;
+
+    width: 90vw;
+    height: 90vh;
+}
+
+
+
+.content .field1 {
+    top: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 100%;
+    height: 34vh;
+    
+}
+
+.content .field1 label {
+    display: flex;
+}
+
+.content .profile-picture {
+    display: inline-block;
+    background-color: lightgrey;
+    border-radius: 10px;
+    height: 100%;
+    margin-right: 1vw;
+    width: 25vw;
+}
+
+
+.content .field2 {
+    padding-top: 1.5vh;
+    width: 100%;
+}
+
+.content button {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    line-height: 6vh;
+    border-radius: 30px;
+    height: 6vh;
+    width: 20vh;
+    background-color: grey;
+    color: black;
+    border: 0px;
+    font-size: 16px;
+    font-family: 'Open Sans';
+    font-style: normal;
+}
