@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hope For All - Login</title>
+    <link rel="stylesheet" href="static/loginpage.css">
+</head>
+<body>
+    <div class="login-container">
+        <button class="close-btn">&times;</button>
+        <div class="logo">
+            <img src="/static/images/HopeForAll_Logo.jpg" alt="Hope4All">
+        </div>
+        <form action="/login" method="post">
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="password" name="password" placeholder="Password" required>
+
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                    <p style="color: #e94f4f; font-size: 10pt; padding-top: 5px;" >{{ message }}</p>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        
+            <p class="footnote">The system will create a new account if you do not have an existing account.</p>
+            <button type="submit" class="sign-in-btn">Sign In</button>
+        </form>
+
+    </div>
+</body>
+</html>
