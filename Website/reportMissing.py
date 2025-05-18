@@ -17,17 +17,14 @@ def reportMissing():
     return render_template('reportMissing.html')
 
     
-@app.route('/reportMissing/submit', methods=["POST"])
+@app.route('/reportMissing/submit', methods=["GET","POST"])
 def db_register():
 
-    if request.method == "POST":
         # Adding THE MID (random generated number)
         # Adding the double check after the random generated number if MID already exist in the database.
-        MID = random() * 9
-        print(MID)
-        info = []
-        info.append(request.form['iname'])
-        print(info)
+    MID = random() 
+    print(MID)
+    print(request.form) # For some reason the form is not being properly requested, I blame my misunderstanding due to the incomplete lessons.
         #try:
             #with db.connect(db_name) as con:
                 #cur = con.cusor()
@@ -40,7 +37,7 @@ def db_register():
         #finally:
             #con.close()
             #return msg
-        return info
+    return request.form
 
 
 def get_inputs() -> list:

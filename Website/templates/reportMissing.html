@@ -13,12 +13,12 @@
 		<label><b>Report Missing Person</b></label>
 	</div>
 
-	<form method="POST" action="/reportMissing/submit">
+	<form method="GET" action="/reportMissing/submit">
 		<div class="content">
 			<div class="field1">
 				<div class="profile-picture"></div>
 				<div class="inputs">
-					<input class="iname" name="iname" type="text" placeholder="Missing Person's Name *"></input>
+					<input class="iname" id="iname" type="text" placeholder="Missing Person's Name *"></input>
 					<input class="iage" name="iage" type="text" placeholder="Missing Person's Age *"></input>
 					<input class="iidmark" name="iidmark" type="text" placeholder="Missing Person's Identification Mark *"></input>
 					<input class="icontact" name="icontact" type="text" placeholder="Contact Information *"></input>
