@@ -17,7 +17,7 @@ def reportMissing():
     return render_template('reportMissing.html')
 
     
-@app.route('/reportMissing/submit')
+@app.route('/reportMissing/submit', methods=["POST"])
 def db_register():
 
     if request.method == "POST":
