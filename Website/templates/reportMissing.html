@@ -13,25 +13,27 @@
 		<label><b>Report Missing Person</b></label>
 	</div>
 
-	<div class="content">
-		<div class="field1">
-			<div class="profile-picture"></div>
-			<div class="inputs">
-				<input class="iname" type="text" placeholder="Missing Person's Name *"></input>
-				<input class="iage" type="text" placeholder="Missing Person's Age *"></input>
-				<input class="iidmark" type="text" placeholder="Missing Person's Identification Mark *"></input>
-				<input class="icontact" type="text" placeholder="Contact Information *"></input>
+	<form method="POST" action="/reportMissing/submit">
+		<div class="content">
+			<div class="field1">
+				<div class="profile-picture"></div>
+				<div class="inputs">
+					<input class="iname" name="iname" type="text" placeholder="Missing Person's Name *"></input>
+					<input class="iage" name="iage" type="text" placeholder="Missing Person's Age *"></input>
+					<input class="iidmark" name="iidmark" type="text" placeholder="Missing Person's Identification Mark *"></input>
+					<input class="icontact" name="icontact" type="text" placeholder="Contact Information *"></input>
+				</div>
 			</div>
+			<div class="field2">
+				<input class="imissdate" name="imissdate" type="text" placeholder="Missing Since (Date)"></input>
+				<input class="irelated" name="irelated" type="text" placeholder="Incident Related"></input>
+				<input class="ilastlocation" name="ilastlocation" type="text" placeholder="Last Known Location (Address)"></input>
+				<input class="icountry" name="icountry" type="text" placeholder="Country"></input>
+				<input class="ireportername" name="ireportername" type="text" placeholder="Reporter's Name"></input>
+				<input class="irelation" name="irelation" type="text" placeholder="Relation to Missing Person"></input>
+				<input class="inotes" name="inotes" type="text" placeholder="Additional Notes"></input>
+			</div>
+			<button onclick="location.href='/reportMissing/submit'">Submit</button>
 		</div>
-		<div class="field2">
-			<input class="imissdate" type="text" placeholder="Missing Since (Date)"></input>
-			<input class="irelated" type="text" placeholder="Incident Related"></input>
-			<input class="ilastlocation" type="text" placeholder="Last Known Location (Address)"></input>
-			<input class="icountry" type="text" placeholder="Country"></input>
-			<input class="ireportername" type="text" placeholder="Reporter's Name"></input>
-			<input class="irelation" type="text" placeholder="Relation to Missing Person"></input>
-			<input class="inotes" type="text" placeholder="Additional Notes"></input>
-		</div>
-		<button onclick="location.href='/reportMissing/submit'">Submit</button>
-	</div>
+	</form>
 </body>
