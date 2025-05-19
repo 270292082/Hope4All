@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hope For All - Login</title>
     <link rel="stylesheet" href="static/loginpage.css">
+
+    <!-- font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="login-container">
@@ -16,6 +21,7 @@
             <input type="email" name="email" placeholder="Email Address" required>
             <input type="password" name="password" placeholder="Password" required>
 
+            <!-- flash message -->
             {% with messages = get_flashed_messages() %}
             {% if messages %}
                 <ul>
@@ -26,8 +32,12 @@
             {% endif %}
         {% endwith %}
         
-            <p class="footnote">The system will create a new account if you do not have an existing account.</p>
-            <button type="submit" class="sign-in-btn">Sign In</button>
+            <button type="submit" class="signin-btn">Sign In</button>
+
+            <!-- sign up button -->
+            <p class="footnote" style="margin-top: 15px;">Don't have an account?
+                <a href="/register" style="text-decoration: underline; color: #e94f4f;">Sign Up</a>
+            </p>
         </form>
 
     </div>
