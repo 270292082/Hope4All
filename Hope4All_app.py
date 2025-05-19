@@ -21,8 +21,8 @@ def homepage():
 @app.route('/login', methods = ['GET','POST'])
 def login():
     if request.method == 'POST':
-        email = request.form.get['email']
-        password = request.form.get['password']
+        email = request.form.get('email')
+        password = request.form.get('password')
 
         conn = DB_connection()
         user = conn.execute("SELECT * FROM Rescuer WHERE Email = ?", (email,)).fetchone()
@@ -30,9 +30,15 @@ def login():
 
         if user:
             if user['Password'] == password:
-                session['user_email'] = email
+                session['userEmail'] = email
                 flash('Login Successful', 'success')
-                return redirect(url_for('homepage'))
+                #return redirect(url_for('homepage'))
+
+                # redirect to last accessed page
+                nextPage = session.pop('next', None)
+                return redirect(nextPage) if nextPage else redirect(url_for('homepage'))
+            
+
             else:
                 flash("Incorrect email or password. Please try again.", 'error')
 
@@ -84,15 +90,43 @@ def logout():
     flash ('Logged out successfully')
     return redirect(url_for('homepage'))
 
-#report- prevent from reporting
-@app.route('/report')
-def report():
-    if 'user_email' not in session:
-        flash('Please login to respond to this report.', 'error')
-        redirect(url_for('login'))
-    return "<h2>Login to report</h2>"
+# respond missing person
+@app.route('/respond/<int:MId>', methods = ['GET', 'POST'])
+def respondfound(MId):
+    #check user login
+    if 'userEmail' not in session:
+        #save current page url before redirecting to login
+        session['next'] = url_for('respondfound', MId = MId)
 
-# reporting missing person
+        flash("Please log in to respond to this report.", 'error')
+        return redirect(url_for('login'))
+
+    conn = DB_connection()
+    missingPerson = conn.execute('SELECT * FROM Missing WHERE MID = ?', (MId,)).fetchone()
+    print(missingPerson)
+    rescuer = conn.execute('SELECT * FROM Rescuer WHERE Email = ?', (session['userEmail'],)).fetchone()
+
+    if request.method == 'POST':
+        foundLocation =request.form('foundLocation')
+        foundDate = request.form('foundDate')
+        foundCondition = request.form('foundCondition')
+        foundContact = request.form('foundContact')
+
+        reporterName = rescuer['FullName'] 
+        reporterRole = rescuer['Role'] 
+        RId = rescuer['RID']
+
+        conn.execute(
+            'INSERT INTO Reports (RID, MID, FoundLocation, FoundDate, FoundCondition, FoundContact) VALUES (?,?,?,?,?,?)',
+            (RId, MId, foundLocation, foundDate, foundCondition, foundContact)
+        )
+        conn.commit()
+        conn.close()
+        flash('Report submitted successfully.')
+        return redirect(url_for('homepage'))
+    
+    conn.close()
+    return render_template('respondfound.html', missingPerson = missingPerson, rescuer = rescuer)
 
 if __name__ == '__main__':
     app.run(debug=True)
