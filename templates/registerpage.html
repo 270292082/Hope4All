@@ -20,7 +20,17 @@
             <input type="text" name="fullname" placeholder="Full Name *" required>
             <input type="date" name="dob" placeholder="Date of Birth *" required>
             <input type="text" name="contact" placeholder="Contact Number *" required>
-            <input type="text" name="role" placeholder="Response Person Role / Position / Occupation *" required>
+            
+            <select name="role" required>
+                <option value="">Select Your Role *</option>
+                <option value="Volunteer">Volunteer</option>
+                <option value="Medical Staff">Medical Staff</option>
+                <option value="Field Responder">Field Responder</option>
+                <option value="Rescue Person">Rescue Person</option>
+                <option value="Community Member">Community Member</option>
+                <option value="Civilian">Civilian</option>
+            </select>
+
             <input type="password" name="password" placeholder="Enter Password *" required>
             <input type="password" name="confirm_password" placeholder="Confirm Password *" required>
             

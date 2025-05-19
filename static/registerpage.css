@@ -1,4 +1,5 @@
-body {
+body 
+{
     background-color: #f2f2f2;
     display: flex;
     justify-content: center;
@@ -9,7 +10,8 @@ body {
     padding: 20px 0;
 }
 
-.register-container {
+.register-container 
+{
     position: relative;
     background: #fff;
     padding: 60px 30px;
@@ -36,7 +38,8 @@ body {
     margin-bottom: 20px;
 }
 
-form input {
+form input 
+{
     width: 90%;
     padding: 12px 15px;
     margin: 10px 0;
@@ -46,7 +49,20 @@ form input {
     font-size: 16px;
 }
 
-.terms {
+form select 
+{
+    width: 95%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    background-color: #d9d9d9;
+    font-size: 16px;
+    appearance: none;
+}
+
+.terms 
+{
     display: flex;
     align-items: center;
     font-size: 12px;
@@ -55,7 +71,8 @@ form input {
     white-space: nowrap;
 }
 
-.terms input[type="checkbox"] {
+.terms input[type="checkbox"] 
+{
     margin: 0px 6px 0 0;
     vertical-align: middle;
     width: 14px;
@@ -63,13 +80,15 @@ form input {
     flex-shrink: 0;
 }
 
-.terms a {
+.terms a 
+{
     color: #e94f4f;
     text-decoration: none;
     margin: 0 4px;
 }
 
-.register-btn {
+.register-btn 
+{
     background-color: #e94f4f; 
     color: white;
     border: none;
@@ -82,6 +101,7 @@ form input {
     transition: background-color 0.3s ease;
 }
 
-.register-btn:hover {
+.register-btn:hover 
+{
     background-color: #e94f4f;
 }

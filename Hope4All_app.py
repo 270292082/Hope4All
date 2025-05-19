@@ -92,5 +92,7 @@ def report():
         redirect(url_for('login'))
     return "<h2>Login to report</h2>"
 
+# reporting missing person
+
 if __name__ == '__main__':
     app.run(debug=True)
