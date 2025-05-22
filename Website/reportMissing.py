@@ -20,11 +20,11 @@ def reportMissing():
 @app.route('/reportMissing/submit', methods=["GET","POST"])
 def db_register():
 
+    if request.method == 'POST':
         # Adding THE MID (random generated number)
         # Adding the double check after the random generated number if MID already exist in the database.
-    MID = random() 
-    print(MID)
-    print(request.form) # For some reason the form is not being properly requested, I blame my misunderstanding due to the incomplete lessons.
+        print("form:", request.form) # For some reason the form is not being properly requested, I blame my misunderstanding due to the incomplete lessons.
+        print("iname:", request.form.get('iname'))
         #try:
             #with db.connect(db_name) as con:
                 #cur = con.cusor()
