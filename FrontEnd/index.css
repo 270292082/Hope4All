@@ -22,7 +22,7 @@ body {
 	left: 0px;
 
 
-	height: 10vh; 
+	height: 70px;
 	width: 100%;
 	background-color: #e94f4f;
 
@@ -116,7 +116,7 @@ body {
 .helpContainer {
 	position: relative;
 
-	margin-top: 10.5vh;
+	margin-top: 75px;
 
 	height: 3%;
 	width: 100%;
@@ -125,9 +125,9 @@ body {
 .helpContainer img {
 	float: right;
 	padding-right: 0.6vw;
-	padding-top: 0.6vh;
+	padding-top: 6px;
 
-	height: 3vh;
+	height: 20px;
 	width: auto;
 }
 
@@ -137,8 +137,7 @@ body {
 	align-items: center;
 
 	position: relative;
-
-	height: 8%;
+	height: 50px;
 	width: 100%;
 
 }
@@ -165,13 +164,13 @@ body {
 
 .reportContainer .report label {
 	padding-right: 30px;
-	font-size: clamp(14px, 2vw, 45px); 
+	font-size: 20px;
 	color: #F7F0ED;
 }
 
 
 .incidents{
-	margin-top: 2%;
+	margin-top: 20px;
 }
 
 .incidents .recent {
@@ -179,7 +178,7 @@ body {
 	justify-content: space-between;
 	position: relative;	
 
-	height: 35%;
+	height: 250px;
 	width: 100%;
 
 }
@@ -225,7 +224,7 @@ body {
 	justify-content: space-between;
 	position: relative;	
 
-	height: 35%;
+	height: 250px;
 	width: 100%;
 
 }
