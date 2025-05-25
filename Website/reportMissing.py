@@ -1,7 +1,8 @@
 from flask import Flask, request, render_template
 import sqlite3 as db
+import time
 
-from random import random
+from random import randint, seed
 
 app = Flask(__name__)
 db_name = "Database/Hope4All.db"
@@ -21,28 +22,47 @@ def reportMissing():
 def db_register():
 
     if request.method == 'POST':
-        # Adding THE MID (random generated number)
         # Adding the double check after the random generated number if MID already exist in the database.
-        print("form:", request.form) # For some reason the form is not being properly requested, I blame my misunderstanding due to the incomplete lessons.
-        print("iname:", request.form.get('iname'))
-        #try:
-            #with db.connect(db_name) as con:
-                #cur = con.cusor()
-                #cur.execute("INSERT INTO Missing (MID, FirstName, LastName, Age, IdentificationMark, Contact, MissingSince, LastKnownLocation, IncidentRelated, Country, Additional) VALUES (?,?,?,?,?,?,?,?,?,?,?)", (info[0],info[1],info[2],info[3],info[4],info[5],info[6],info[7],info[8],info[9]))
-                #con.commit()
-                #msg = "Successfully commited!"
-        #except:
-            #msg = "ERROR in Operation!"
+        MID = randint(111111111,999999999)
+        result = [MID]
 
-        #finally:
-            #con.close()
-            #return msg
-    return request.form
+        # Check if the generated ID already exists in the database.
+        while result[0] == MID:
+            seed(time.time())
+            MID = randint(111111111,999999999)
+            con = db.connect(db_name)
+            con.row_factory = db.Row
+            cur = con.cursor()
+            cur.execute("SELECT MID FROM Missing WHERE MID==?", (MID,))
+            result = cur.fetchone()
+            if result == None:
+                break
+            con.close()
+
+        try:
+            info = get_inputs()
+            with db.connect(db_name) as con:
+                cur = con.cursor()
+                cur.execute("INSERT INTO Missing (MID, FirstName, LastName, Age, IdentificationMark, Contact, MissingSince, LastKnownLocation, IncidentRelated, Country, Additional, ReporterName, ReporterRelation) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)", (MID, info[0],info[1],info[2],info[3],info[4],info[5],info[6],info[7],info[8],info[9],info[10], info[11]))
+                con.commit()
+                msg = "Successfully commited!"
+        except:
+            msg = "ERROR in Operation!"
+            con.rollback()
+
+        finally:
+            con.close()
+            return msg
 
 
 def get_inputs() -> list:
     info = []
-    info.append(request.form['iname'])
+    name = request.form['iname']
+    name = name.split()
+    firstName = name[0] 
+    lastName = name[1]
+    info.append(firstName)
+    info.append(lastName)
     info.append(request.form['iage'])
     info.append(request.form['iidmark'])
     info.append(request.form['icontact'])
@@ -53,6 +73,7 @@ def get_inputs() -> list:
     info.append(request.form['ireportername'])
     info.append(request.form['irelation'])
     info.append(request.form['inotes'])
+    print(info)
     return info
 
 if __name__ == '__main__':
