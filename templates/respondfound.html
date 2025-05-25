@@ -17,7 +17,7 @@
     
             <div class="missingperson-details">
                 <!--to fill image source-->
-                <img src="{{ missingPerson['Photo'] or 'static/images/placeholder.jpg' }}" alt="Missing Person Photo" class="missingperson-photo">
+                <img src="{{ missingPerson['Photo'] or url_for('static', filename = 'images/placeholder.jpg') }}" class="missingperson-photo">
 
                 <div class="info">
                     <p><strong>Name</strong><br>{{ missingPerson['FirstName'] }} {{ missingPerson['LastName'] }}</p>
