@@ -1,11 +1,14 @@
 .close {
-	display: flex;
 	position: absolute;
-	height: 35px;
+	height: 55px;
 	width: auto;
+    background: none;
+    border: none;
+    font-size: 55px;
+    cursor: pointer;
 
-	top: 18px;
-	right: 10px;
+	top: 0px;
+	right: 0px;
 }
 
 .header {
