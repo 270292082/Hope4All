@@ -5,7 +5,7 @@ import backend.reportMissing as reportMissing
 from random import randint, seed
 
 app = Flask(__name__)
-db_name = "Database/Hope4All.db"
+db_name = "database/Hope4All.db"
 
 
 @app.route('/')
