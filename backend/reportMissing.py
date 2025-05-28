@@ -1,25 +1,14 @@
-from flask import Flask, request, render_template
-import sqlite3 as db
+from flask import request, render_template
+from random import seed, randint
 import time
+import sqlite3 as db
 
-from random import randint, seed
-
-app = Flask(__name__)
 db_name = "Database/Hope4All.db"
 
-
-
-@app.route('/')
 def index():
-    return render_template('index.html')
-
-@app.route('/reportMissing')
-def reportMissing():
     return render_template('reportMissing.html')
 
-    
-@app.route('/reportMissing/submit', methods=["GET","POST"])
-def db_register():
+def submit():
 
     if request.method == 'POST':
         # Adding the double check after the random generated number if MID already exist in the database.
@@ -54,7 +43,6 @@ def db_register():
             con.close()
             return msg
 
-
 def get_inputs() -> list:
     info = []
     name = request.form['iname']
@@ -75,6 +63,3 @@ def get_inputs() -> list:
     info.append(request.form['inotes'])
     print(info)
     return info
-
-if __name__ == '__main__':
-    app.run(debug=True)

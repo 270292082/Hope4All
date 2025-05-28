@@ -1,6 +1,6 @@
 <head>
 	<title>Report Missing Person</title>
-	<link rel="stylesheet" href="missing-person.css">
+	<link rel="stylesheet" href="edit-person.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
@@ -8,7 +8,7 @@
 </head>
 
 <body>
-	<img class="close" src="ressources/cross.png"></img>
+	<img class="close" src="{{ url_for('static', filename='ressources/cross.png') }}"></img>
 	<div class="header">
 		<label><b>Report Missing Person</b></label>
 	</div>
@@ -50,5 +50,6 @@
 				<label class="notes"><b>[notes]</b></label>
 			</div>
 		</div>
+		<button>Edit</button>
 	</div>
 </body>

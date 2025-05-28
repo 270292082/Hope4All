@@ -1,6 +1,6 @@
 <head>
 	<title>Hope For All</title>
-	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
@@ -9,18 +9,18 @@
 
 <body>
 	<div class="banner">
-		<img src="ressources/logo.png" class="logo"></img>
+		<img src="{{ url_for('static', filename='ressources/logo.png')}}" class="logo"></img>
 
 		<div class="search">
 			<input type="text" class="searchBar" name="searchBar" placeholder="Search...">
-			<img src="ressources/filter.png" class="filterLogo"></img>
-			<img src="ressources/search.png" class="searchLogo"></img>
+			<img src="{{ url_for('static', filename='ressources/filter.png') }}" class="filterLogo"></img>
+			<img src="{{ url_for('static', filename='ressources/search.png') }}" class="searchLogo"></img>
 		</div>
 
-		<img src="ressources/bell.png" class="bell"></img>
+		<img src="{{ url_for('static', filename='ressources/bell.png') }}" class="bell"></img>
 		<div class="languageContainer"> 
 			<div class="language">
-				<img src="ressources/language.png" class="languageIco"></img>
+				<img src="{{ url_for('static', filename='ressources/language.png') }}" class="languageIco"></img>
 				<label class="language-current"><b>Eng</b></label>
 			</div>
 		</div>
@@ -30,12 +30,12 @@
 	<div>
 
 	<div class="helpContainer">
-		<img src="ressources/question.png"></img>
+		<img src="{{ url_for('static', filename='ressources/question.png') }}"></img>
 	</div>
 	
 	<div class="reportContainer">
 		<div class="report">
-			<img src="ressources/missing.png"></img>
+			<img src="{{ url_for('static', filename='ressources/missing.png') }}"></img>
 			<label>Report Missing Person</label>
 		</div>
 	</div>
