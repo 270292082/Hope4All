@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Hope For All - Report Found</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='respond-found.css') }}">
+
+        <!-- font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="report-container">
+            <button class="close-btn" onclick="window.location.href='/'">&times;</button>
+    
+            <div class="missingperson-details">
+                <!--to fill image source-->
+                <img src="{{ missingPerson['Photo'] or url_for('static', filename = 'images/placeholder.jpg') }}" class="missingperson-photo">
+
+                <div class="info">
+                    <p><strong>Name</strong><br>{{ missingPerson['FirstName'] }} {{ missingPerson['LastName'] }}</p>
+                    <p><strong>Age</strong><br>{{ missingPerson['Age'] }}</p>
+                    <p><strong>Identification Mark</strong><br>{{ missingPerson['IdentificationMark'] }}</p>
+                    <p><strong>Contact Information</strong><br>{{ missingPerson['Contact'] }}</p>
+                </div>
+            </div>
+    
+            <form action="" method="post">  
+                <input type="text" name="foundLocation" placeholder="Where was this missing person found? *" required>
+                <input type="text" name="foundDate" placeholder="When was this missing person found? *" required>
+                <select name="foundCondition" required>
+                    <option value="">Found Alive / Found Deceased *</option>
+                    <option value="Alive">Alive</option>
+                    <option value="Deceased">Deceased</option>
+                </select>
+
+                <!-- reporter info - read only? -->
+                <input type="text" name="reporterName" value="{{ rescuer['FullName'] }}" placeholder="Reporter's Name" readonly>
+                <input type="text" name="reporterRole" value="{{ rescuer['Role'] }}" placeholder="Reporter's Role (for search of missing person)" readonly>
+
+                <input type="text" name="foundContact" placeholder="Reporter's Contact Information" required>
+    
+                <button type="submit" class="report-btn">Report Found</button>
+            </form>
+        </div>
+    </body>
+</html>

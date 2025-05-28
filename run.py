@@ -1,8 +1,11 @@
 from flask import Flask, request, render_template
 import sqlite3 as db
-import backend.reportMissing as reportMissing
-
 from random import randint, seed
+
+import backend.loginPage as loginPage
+import backend.reportMissing as reportMissing
+import backend.respondFound as respondFound
+
 
 app = Flask(__name__)
 db_name = "database/Hope4All.db"
@@ -11,6 +14,22 @@ db_name = "database/Hope4All.db"
 @app.route('/')
 def index():
     return render_template('index.html')
+
+
+# -- Login Page --
+@app.route('/login', methods=['GET', 'POST'])
+def LP_login():
+    return loginPage.login()
+
+@app.route('/register', methods = ['POST', 'GET'])
+def LP_register():
+    return loginPage.register()
+
+@app.route('/logout')
+def LP_logout():
+    return loginPage.logout()
+# ------
+ 
 
 
 # -- Report Missing Page --
@@ -23,6 +42,13 @@ def RM_submit():
     return reportMissing.submit()
 # ------
 
+
+
+# -- Respond Found Page --
+@app.route('/respond/<int:MID>', methods = ['GET', 'POST'])
+def RF_found(MID): 
+    respondFound.found(MID)
+# ------
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hope For All - Login</title>
+    <link rel="stylesheet" href="static/login-page.css">
+
+    <!-- font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container">
+        <button class="close-btn">&times;</button>
+        <div class="logo">
+            <img src="/static/images/HopeForAll_Logo.jpg" alt="Hope4All">
+        </div>
+        <form action="/login" method="post">
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="password" name="password" placeholder="Password" required>
+
+            <!-- flash message -->
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                    <p style="color: #e94f4f; font-size: 10pt; padding-top: 5px;" >{{ message }}</p>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        
+            <button type="submit" class="signin-btn">Sign In</button>
+
+            <!-- sign up button -->
+            <p class="footnote" style="margin-top: 15px;">Don't have an account?
+                <a href="/register" style="text-decoration: underline; color: #e94f4f;">Sign Up</a>
+            </p>
+        </form>
+
+    </div>
+</body>
+</html>

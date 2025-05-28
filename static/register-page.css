@@ -1,0 +1,109 @@
+body 
+{
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    padding: 20px 0;
+}
+
+.register-container 
+{
+    position: relative;
+    background: #fff;
+    padding: 60px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+
+    box-sizing: border-box;
+}
+
+.close-btn 
+{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.register-container h2 
+{
+    margin-bottom: 20px;
+}
+
+form input 
+{
+    width: 90%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    background-color: #d9d9d9;
+    font-size: 16px;
+}
+
+form select 
+{
+    width: 95%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    background-color: #d9d9d9;
+    font-size: 16px;
+    appearance: none;
+}
+
+.terms 
+{
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #555;
+    margin: 15px 0px 15px 15px;
+    white-space: nowrap;
+}
+
+.terms input[type="checkbox"] 
+{
+    margin: 0px 6px 0 0;
+    vertical-align: middle;
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+.terms a 
+{
+    color: #e94f4f;
+    text-decoration: none;
+    margin: 0 4px;
+}
+
+.register-btn 
+{
+    background-color: #e94f4f; 
+    color: white;
+    border: none;
+    padding: 12px;
+    margin-top: 10px;
+    width: 40%;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register-btn:hover 
+{
+    background-color: #e94f4f;
+}

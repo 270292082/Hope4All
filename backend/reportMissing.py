@@ -2,11 +2,10 @@ from flask import request, render_template
 from random import seed, randint
 import time
 import sqlite3 as db
-
-db_name = "Database/Hope4All.db"
+from env import *
 
 def index():
-    return render_template('reportMissing.html')
+    return render_template('report-missing.html')
 
 def submit():
 
@@ -19,7 +18,7 @@ def submit():
         while result[0] == MID:
             seed(time.time())
             MID = randint(111111111,999999999)
-            con = db.connect(db_name)
+            con = db.connect(DB_PATH)
             con.row_factory = db.Row
             cur = con.cursor()
             cur.execute("SELECT MID FROM Missing WHERE MID==?", (MID,))
@@ -30,7 +29,7 @@ def submit():
 
         try:
             info = get_inputs()
-            with db.connect(db_name) as con:
+            with db.connect(DB_PATH) as con:
                 cur = con.cursor()
                 cur.execute("INSERT INTO Missing (MID, FirstName, LastName, Age, IdentificationMark, Contact, MissingSince, LastKnownLocation, IncidentRelated, Country, Additional, ReporterName, ReporterRelation) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)", (MID, info[0],info[1],info[2],info[3],info[4],info[5],info[6],info[7],info[8],info[9],info[10], info[11]))
                 con.commit()
@@ -61,5 +60,4 @@ def get_inputs() -> list:
     info.append(request.form['ireportername'])
     info.append(request.form['irelation'])
     info.append(request.form['inotes'])
-    print(info)
     return info

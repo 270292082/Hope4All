@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hope For All - Register</title>
+    <link rel="stylesheet" href="static/registerpage.css">
+
+    <!-- font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="register-container">
+        <button class="close-btn" onclick="window.location.href='/login'">&times;</button>
+        <h2 style="margin-top: -20px;">Register Account</h2>
+        <form action="/register" method="post">
+            <input type="email" name="email" placeholder="Email Address *" required>
+            <input type="text" name="fullname" placeholder="Full Name *" required>
+            <input type="date" name="dob" placeholder="Date of Birth *" required>
+            <input type="text" name="contact" placeholder="Contact Number *" required>
+            
+            <select name="role" required>
+                <option value="">Select Your Role *</option>
+                <option value="Volunteer">Volunteer</option>
+                <option value="Medical Staff">Medical Staff</option>
+                <option value="Field Responder">Field Responder</option>
+                <option value="Rescue Person">Rescue Person</option>
+                <option value="Community Member">Community Member</option>
+                <option value="Civilian">Civilian</option>
+            </select>
+
+            <input type="password" name="password" placeholder="Enter Password *" required>
+            <input type="password" name="confirm_password" placeholder="Confirm Password *" required>
+            
+            <label class="terms">
+                <input type="checkbox" name="terms" required> 
+                I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+            </label>
+            
+            <button type="submit" class="register-btn">Create Account</button>
+        </form>
+    </div>
+</body>
+</html>

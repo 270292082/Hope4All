@@ -1,0 +1,99 @@
+body 
+{
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.report-container 
+{
+    position: relative;
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    width: 100%;
+    
+}
+
+.close-btn 
+{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.missingperson-details 
+{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.missingperson-photo {
+    width: 200px;
+    height: 100%;
+    object-fit: cover;
+    border: 2px dashed #3d3d3d;
+    border-radius: 12px;
+    margin: 0 20px 0 20px;
+    background-image: url("images/placeholder.jpg") auto;
+}
+
+.info p 
+{
+    text-align: left;
+    margin: 5px 0 10px 10px;
+}
+
+form input
+{
+    width: 95%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    background-color: #d9d9d9;
+    font-size: 16px;
+}
+
+form select
+{
+    width: 98%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    background-color: #d9d9d9;
+    font-size: 16px;
+    appearance: none;
+}
+
+.report-btn 
+{
+    background-color: #e94f4f;
+    color: white;
+    border: none;
+    padding: 12px 0;
+    width: 20%;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+.report-btn:hover 
+{
+    background-color: #d93b3b;
+}
