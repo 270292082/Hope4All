@@ -17,7 +17,10 @@
 			<img src="{{ url_for('static', filename='ressources/search.png') }}" class="searchLogo"></img>
 		</div>
 
-		<img src="{{ url_for('static', filename='ressources/bell.png') }}" class="bell"></img>
+		<div class="signContainer">
+			<button onclick="location.href='/login';"><b>Sign In</b></button>
+		</div>
+
 		<div class="languageContainer"> 
 			<div class="language">
 				<img src="{{ url_for('static', filename='ressources/language.png') }}" class="languageIco"></img>
