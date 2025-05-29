@@ -10,6 +10,7 @@ import backend.respondFound as respondFound
 #  Make the database work with the merged branch.
 
 app = Flask(__name__)
+app.secret_key = '1234567890'
 db_name = "database/Hope4All.db"
 
 

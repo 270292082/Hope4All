@@ -19,7 +19,7 @@ def login():
 
                 # redirect to last accessed page
                 nextPage = session.pop('next', None)
-                return redirect(nextPage) if nextPage else redirect(url_for('homepage'))
+                return redirect(nextPage) if nextPage else redirect('/homepage')
             
 
             else:
@@ -27,7 +27,7 @@ def login():
 
         else:
             flash('Account not found. Please register.', 'error')
-            return redirect(url_for('login'))
+            return redirect('/login')
     
     return render_template('login-page.html')
 
@@ -35,16 +35,20 @@ def login():
 def register():
     if request.method == 'POST':
         email = request.form['email']
-        fullname = request.form['fullname']
+        name = request.form['fullname'].split()
         dob = request.form['dob']
         contact = request.form['contact']
         role = request.form['role']
         password = request.form['password']
         confirm_password = request.form['confirm_password']
 
+        if len(name) < 2:
+            flash("Please enter your first name and last name!", 'error')
+            return redirect(url_for('register'))
+
         if password != confirm_password:
             flash("Passwords do not match.", 'error')
-            return redirect(url_for('register'))
+            return redirect('/register')
         
         conn = DB_connection()
         existUser = conn.execute('SELECT * FROM Rescuer WHERE Email = ?', (email,)).fetchone()
@@ -52,21 +56,21 @@ def register():
         if existUser:
             flash("This email has an existing account.", 'error')
             conn.close()
-            return redirect(url_for('login'))
+            return redirect('/login')
         
         conn.execute(
-            'INSERT INTO Rescuer (FullName, DOB, Contact, Role, Email, Password) VALUES (?,?,?,?,?,?)', (fullname, dob, contact, role, email, password)
+            'INSERT INTO Rescuer (FirstName, LastName, DOB, Contact, Role, Email, Password) VALUES (?,?,?,?,?,?,?)', (name[0], name[1], dob, contact, role, email, password)
         )
         conn.commit()
         conn.close()
 
         flash("Registration Successful. Please proceed to login.", 'success')
-        return redirect(url_for('login'))
+        return redirect('/login')
     
-    return render_template('registerpage.html')
+    return render_template('register-page.html')
 
 
 def logout():
     session.pop('user', None)
     flash ('Logged out successfully')
-    return redirect(url_for('homepage'))
+    return redirect('/homepage')
