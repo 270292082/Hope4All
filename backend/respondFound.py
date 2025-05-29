@@ -10,7 +10,7 @@ def found(MID):
         flash("Please log in to respond to this report.", 'error')
         return redirect(url_for('login'))
 
-    conn = DB_connection()
+    conn = db_connection()
     missingPerson = conn.execute('SELECT * FROM Missing WHERE MID = ?', (MID,)).fetchone()
     print(missingPerson)
     rescuer = conn.execute('SELECT * FROM Rescuer WHERE Email = ?', (session['userEmail'],)).fetchone()

@@ -22,25 +22,21 @@
 		</div>
 
 		<div class="languageContainer"> 
-			<div class="language">
+			<button class="language">
 				<img src="{{ url_for('static', filename='ressources/language.png') }}" class="languageIco"></img>
 				<label class="language-current"><b>Eng</b></label>
-			</div>
+			</button>
 		</div>
 
 			</div>
 
 	<div>
 
-	<div class="helpContainer">
-		<img src="{{ url_for('static', filename='ressources/question.png') }}"></img>
-	</div>
-	
 	<div class="reportContainer">
-		<div class="report">
+		<button class="report">
 			<img src="{{ url_for('static', filename='ressources/missing.png') }}"></img>
 			<label>Report Missing Person</label>
-		</div>
+		</button>
 	</div>
 
 
@@ -56,7 +52,15 @@
 				</div>
 			</div>
 			<div class="content">
-			
+				{% for missing in missings %}
+					<div class="missing-person-card">
+						<h3>{{ missing.FirstName }}</h3>
+						<div class="info">
+							<p>{{ missing.age }} yrs</p>
+							<p>{{ missing.LastKnownLocation }}</p>
+						</div>
+					</div>
+				{% endfor %}
 			</div>
 		</div>
 

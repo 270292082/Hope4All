@@ -5,6 +5,7 @@ from random import randint, seed
 import backend.loginPage as loginPage
 import backend.reportMissing as reportMissing
 import backend.respondFound as respondFound
+import backend.env as env
 
 # THINGS LEFT TO DO
 #  Make the database work with the merged branch.
@@ -16,7 +17,7 @@ db_name = "database/Hope4All.db"
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', missings=env.getMissing())
 
 
 

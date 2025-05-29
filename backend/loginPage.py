@@ -7,7 +7,7 @@ def login():
         email = request.form.get('email')
         password = request.form.get('password')
 
-        conn = DB_connection()
+        conn = db_connection()
         user = conn.execute("SELECT * FROM Rescuer WHERE email = ?", (email,)).fetchone()
         conn.close()
 
@@ -50,7 +50,7 @@ def register():
             flash("Passwords do not match.", 'error')
             return redirect('/register')
         
-        conn = DB_connection()
+        conn = db_connection()
         existUser = conn.execute('SELECT * FROM Rescuer WHERE Email = ?', (email,)).fetchone()
 
         if existUser:
