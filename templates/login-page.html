@@ -23,14 +23,14 @@
 
             <!-- flash message -->
             {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                <ul>
-                    {% for message in messages %}
-                    <p style="color: #e94f4f; font-size: 10pt; padding-top: 5px;" >{{ message }}</p>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-        {% endwith %}
+                {% if messages %}
+                    <ul>
+                        {% for message in messages %}
+                        <p style="color: #e94f4f; font-size: 10pt; padding-top: 5px;" >{{ message }}</p>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
         
             <button type="submit" class="signin-btn">Sign In</button>
 
