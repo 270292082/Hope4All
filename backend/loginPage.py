@@ -1,6 +1,6 @@
 from flask import request, session, flash, redirect, url_for, render_template
 import sqlite3 as db
-from env import *
+from backend.env import *
 
 def login():
     if request.method == 'POST':
@@ -8,7 +8,7 @@ def login():
         password = request.form.get('password')
 
         conn = DB_connection()
-        user = conn.execute("SELECT * FROM Rescuer WHERE Email = ?", (email,)).fetchone()
+        user = conn.execute("SELECT * FROM Rescuer WHERE email = ?", (email,)).fetchone()
         conn.close()
 
         if user:
@@ -29,7 +29,7 @@ def login():
             flash('Account not found. Please register.', 'error')
             return redirect(url_for('login'))
     
-    return render_template('loginpage.html')
+    return render_template('login-page.html')
 
 
 def register():

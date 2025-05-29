@@ -6,6 +6,8 @@ import backend.loginPage as loginPage
 import backend.reportMissing as reportMissing
 import backend.respondFound as respondFound
 
+# THINGS LEFT TO DO
+#  Make the database work with the merged branch.
 
 app = Flask(__name__)
 db_name = "database/Hope4All.db"
