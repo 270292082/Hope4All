@@ -8,15 +8,15 @@
 
 <body>
     <div class="remind">
-        <button class="close-btn" onclick="window.history.back()">&times;</button>
-
         <div class="remind-content">
+            <button class="close-btn" onclick="window.history.back()">&times;</button>
+
             <h2>Please prioritize on contacting the family directly using the contact information.</h2>
             <div class="contact-info">Contact Information <br>
                 <span class="contact-number">{{ missingPerson['Contact'] }}</span>
             </div>
 
-            <p>Confirm the following information before reporting</p>
+            <p>Confirm the following information before reporting!</p>
             <div class="info-section">
                 <div class="profile-container">
                     {% if missingPerson['Photo'] %}
@@ -27,25 +27,27 @@
                 </div>
 
                 <div class="person-details">
-                    <div>
-                        <b>Name</b> <br>
-                        <span class="strong">{{ missingPerson['FirstName'] }} {{ missingPerson['LastName'] }}</span>
+                    <div>Name 
+                        <br>
+                        <span class="data">{{ missingPerson['FirstName'] }} {{ missingPerson['LastName'] }}</span>
                     </div>
 
-                    <div>
-                        <b>Age</b> <br>
-                        <span class="strong">{{ missingPerson['Age'] }}</span>
-                    </div>
+                    <div>Age 
+                        <br>
+                        <span class="data">{{ missingPerson['Age'] }}</span>
+                    </div> 
 
-                    <div>
-                        <b>Identification Mark</b>
-                        <span class="strong">{{ missingPerson['IdentificationMark'] }}</span>
+                    <div>Identification Mark
+                        <br>
+                        <span class="data">{{ missingPerson['IdentificationMark'] }}</span>
                     </div>
                 </div>
-
-                <button class="confirm-button">I am reporting the correct person</button>
-                
             </div>
+
+            <div class="footer">
+                <button class="confirm-btn">I am reporting the correct person.</button>
+            </div>
+
         </div>
     </div>
 </body>
