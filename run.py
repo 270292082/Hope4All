@@ -5,6 +5,7 @@ from random import randint, seed
 import backend.loginPage as loginPage
 import backend.reportMissing as reportMissing
 import backend.respondFound as respondFound
+import backend.confirmMissing as confirmMissing
 import backend.env as env
 
 # THINGS LEFT TO DO
@@ -48,12 +49,20 @@ def RM_submit():
 # ------
 
 
+# -- Confirm Missing Person Page --
+@app.route('/confirm/<int:MID>')
+def CM_confirm(MID):
+    return confirmMissing.confirm(MID)
+# -----
+
+
 
 # -- Respond Found Page --
 @app.route('/respond/<int:MID>', methods = ['GET', 'POST'])
 def RF_found(MID): 
     respondFound.found(MID)
 # ------
+
 
 if __name__ == '__main__':
     app.run(debug=True)

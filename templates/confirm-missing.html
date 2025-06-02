@@ -1,0 +1,51 @@
+<head>
+    <title>Confirm Missing Person</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'confirm-missing.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="remind">
+        <button class="close-btn" onclick="window.history.back()">&times;</button>
+
+        <div class="remind-content">
+            <h2>Please prioritize on contacting the family directly using the contact information.</h2>
+            <div class="contact-info">Contact Information <br>
+                <span class="contact-number">{{ missingPerson['Contact'] }}</span>
+            </div>
+
+            <p>Confirm the following information before reporting</p>
+            <div class="info-section">
+                <div class="profile-container">
+                    {% if missingPerson['Photo'] %}
+                        <img src="{{ url_for('static', filename = 'uploads/' + missingPerson['Photo'])}}" alt="Photo" class="profile">
+                    {% else %}
+                        <img src="{{ url_for('static', filename = 'ressources/pp-placeholder.png') }}" alt="No Photo" class="profile">
+                    {% endif %}
+                </div>
+
+                <div class="person-details">
+                    <div>
+                        <b>Name</b> <br>
+                        <span class="strong">{{ missingPerson['FirstName'] }} {{ missingPerson['LastName'] }}</span>
+                    </div>
+
+                    <div>
+                        <b>Age</b> <br>
+                        <span class="strong">{{ missingPerson['Age'] }}</span>
+                    </div>
+
+                    <div>
+                        <b>Identification Mark</b>
+                        <span class="strong">{{ missingPerson['IdentificationMark'] }}</span>
+                    </div>
+                </div>
+
+                <button class="confirm-button">I am reporting the correct person</button>
+                
+            </div>
+        </div>
+    </div>
+</body>
