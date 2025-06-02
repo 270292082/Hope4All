@@ -2,6 +2,7 @@ from flask import Flask, request, render_template
 import sqlite3 as db
 from random import randint, seed
 
+import backend.searchFunction as searchFunction
 import backend.loginPage as loginPage
 import backend.reportMissing as reportMissing
 import backend.respondFound as respondFound
@@ -20,6 +21,11 @@ db_name = "database/Hope4All.db"
 def index():
     return render_template('index.html', missings=env.getMissing())
 
+
+# -- Search Function --
+def SF_search():
+    return searchFunction.search()
+# ------
 
 
 # -- Login Page --
