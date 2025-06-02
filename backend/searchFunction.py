@@ -16,4 +16,4 @@ def search():
         ).fetchall()
         conn.close()
     
-    return render_template('index.html', missings = [], search_results = results, search_term = query)
+    return render_template('search-results.html', missings = [], search_results = results, search_term = query)

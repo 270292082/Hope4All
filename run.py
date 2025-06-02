@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect, url_for
 import sqlite3 as db
 from random import randint, seed
 
@@ -19,11 +19,17 @@ db_name = "database/Hope4All.db"
 
 @app.route('/')
 def index():
-    return render_template('index.html', missings=env.getMissing())
+    return render_template('index.html', missings = env.getMissing())
 
 
 # -- Search Function --
-def SF_search():
+@app.route('/search', methods = ['GET'])
+def search():
+    query = request.args.get('query','').strip()
+
+    # return to home page if no query
+    if not query:
+        return redirect(url_for('index'))
     return searchFunction.search()
 # ------
 

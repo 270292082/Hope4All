@@ -12,7 +12,7 @@
 		<img src="{{ url_for('static', filename='ressources/logo-white.png')}}" class="logo"></img>
 
 		<form action="{{ url_for('search') }}" class="search" method="get" style="display: flex;">
-			<input type="text" class="searchBar" name="query" placeholder="Search.....">
+			<input type="text" class="searchBar" name="query" placeholder="Search....." value="{{ search_term }}">
 			<button type="submit" style="background: none; border: none; padding: 0; cursor: pointer;">
 				<img src="{{ url_for('static', filename='ressources/search.png') }}" class="searchLogo" alt="Search">
 			</button>
@@ -40,56 +40,19 @@
 			</div>
 	<div>
 
-	<div class="reportContainer">
-		<button class="report">
-			<img src="{{ url_for('static', filename='ressources/missing.png') }}"></img>
-			<label>Report Missing Person</label>
-		</button>
-	</div>
-
-
-	<div class="incidents">
-		<div class="recent">
-			<div class="info">
-				<div class="left">
-					<label class="recentLabel">Recent Incident</label>
-				</div>
-				<div class="right">
-					<label class="checkLabel"><u>Check Other Incidents</u></label>
-					<label class="registerLabel"><u>Register New Incident</u></label>
-				</div>
-			</div>
-			<div class="content">
-				{% for missing in missings %}
-					<div class="missing-person-card">
-						<h3>{{ missing.FirstName }}</h3>
-						<div class="info">
-							<p>{{ missing.age }} yrs</p>
-							<p>{{ missing.LastKnownLocation }}</p>
-						</div>
-					</div>
-				{% endfor %}
-			</div>
+	<!-- search results-->
+	{% if search_term %}
+		<div class="search-results">
+			{% if search_results %}
+				<ul>
+					{% for row in search_results %}
+						<li>{{ row['FirstName'] }} {{ row['LastName'] }}, Age : {{ row['Age'] }}</li>
+					{% endfor %}
+				</ul>
+			{% else %}
+				<p>No matching results found.</p>
+			{% endif %}
 		</div>
+	{% endif %}
 
-		<div class="local">
-			<div class="info">
-				<div class="left">
-					<label class="localLabel">Your Location - [Country]</label>
-				</div>
-				<div class="right">
-					<label class="otherCountryLabel"><u>Other Countries</u></label>
-				</div>
-			</div>
-			<div class="content">
-			
-			</div>
-
-
-		</div>
-
-		</div>
-	</div>
-
-	</div>
 </body>

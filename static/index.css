@@ -75,9 +75,16 @@ body {
 }
 
 .banner .searchLogo {
+	/*
 	height: 70%;
 	width: auto;
 	margin-right: 3%;
+	*/
+	width: 28px;
+	height: 28px;
+	object-fit: contain;
+	vertical-align: middle;
+	margin: 0 10px;
 }
 
 
@@ -136,6 +143,42 @@ body {
 	margin: auto;
 	font-size: 15px;
 
+}
+
+
+/* search function - results */
+.search-results
+{
+	background: #fff;
+	padding: 22px 32px 22px 32px;
+	margin: 35px 0 20px 40px;
+	width: 100%;
+	font-family: "Open Sans", sans-serif;
+}
+
+.search-results ul
+{
+	list-style: disc inside;
+	margin: 0 0 0 12px;
+	padding: 0;
+}
+
+.search-results li
+{
+	margin: 10px 0 10px 0;
+	padding: 10px 0 10px 0;
+	color: #333;
+	letter-spacing: 0.01em;
+	font-size: 1.12rem;
+	list-style: none;
+}
+
+.search-results p
+{
+	color: #888;
+	margin: 30px 0 0 0;
+	font-size: 1.08rem;
+	
 }
 
 
