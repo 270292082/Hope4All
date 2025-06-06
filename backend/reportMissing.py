@@ -31,7 +31,7 @@ def submit():
             info = get_inputs()
             with db.connect(DB_PATH) as con:
                 cur = con.cursor()
-                cur.execute("INSERT INTO Missing (MID, FirstName, LastName, Age, IdentificationMark, Contact, MissingSince, LastKnownLocation, IncidentRelated, Country, Additional, ReporterName, ReporterRelation) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)", (MID, info[0],info[1],info[2],info[3],info[4],info[5],info[6],info[7],info[8],info[9],info[10], info[11]))
+                cur.execute("INSERT INTO Missing (MID, FirstName, LastName, Age, IdentificationMark, Contact, MissingSince, LastKnownLocation, IncidentRelated, Country, Additional, ReporterName, ReporterRelation, ProfilePicture) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)", (MID, info[0],info[1],info[2],info[3],info[4],info[5],info[6],info[7],info[8],info[9],info[10], info[11], info[12]))
                 con.commit()
                 msg = "Successfully commited!"
         except:
@@ -46,8 +46,13 @@ def get_inputs() -> list:
     info = []
     name = request.form['iname']
     name = name.split()
-    firstName = name[0] 
-    lastName = name[1]
+    if len(name) < 2:
+        firstName = name[0]
+        lastName = ""
+    else:
+        firstName = name[0] 
+        lastName = name[1]
+
     info.append(firstName)
     info.append(lastName)
     info.append(request.form['iage'])
@@ -60,4 +65,10 @@ def get_inputs() -> list:
     info.append(request.form['ireportername'])
     info.append(request.form['irelation'])
     info.append(request.form['inotes'])
+    file = request.files['ipp']
+    if file:
+        image_data = file.read()
+        mimetype = file.mimetype
+
+    info.append(image_data)
     return info

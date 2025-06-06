@@ -17,19 +17,22 @@
 		<label><b>Report Missing Person</b></label>
 	</div>
 
-	<form action="/reportMissing/submit" method="post">
+	<form action="/reportMissing/submit" method="POST" enctype="multipart/form-data">
 		<div class="content">
 			<div class="field1">
-				<div class="profile-picture"></div>
+				<div class="profile-pictureContainer">
+					<img class="profile-picture" id="preview">
+					<input name="ipp" id="ipp" type="file" class="profile-pictureUpload" accept="image/*"></input>
+				</div>
 				<div class="inputs">
 					<input class="iname" name="iname" type="text" placeholder="Missing Person's Name *"></input>
 					<input class="iage" name="iage" type="text" placeholder="Missing Person's Age *"></input>
-					<input class="iidmark" name="iidmark" type="text" placeholder="Missing Person's Identification Mark *"></input>
+					<input class="iidmark" name="iidmark" type="text" placeholder="Missing Person's Identification Mark"></input>
 					<input class="icontact" name="icontact" type="text" placeholder="Contact Information *"></input>
 				</div>
 			</div>
 			<div class="field2">
-				<input class="imissdate" name="imissdate" type="text" placeholder="Missing Since (Date)"></input>
+				<input class="imissdate" name="imissdate" type="text" placeholder="Missing Since (Date) *"></input>
 				<input class="irelated" name="irelated" type="text" placeholder="Incident Related"></input>
 				<input class="ilastlocation" name="ilastlocation" type="text" placeholder="Last Known Location (Address)"></input>
 				<input class="icountry" name="icountry" type="text" placeholder="Country"></input>
@@ -41,3 +44,18 @@
 		</div>
 	</form>
 </body>
+
+<script>
+function handleFileUpload(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  console.log("User uploaded:", file.name);
+
+  // If you want to preview the image:
+  const preview = document.getElementById('preview');
+  preview.src = URL.createObjectURL(file);
+}
+
+document.getElementById('ipp').addEventListener('change', handleFileUpload);
+</script>

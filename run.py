@@ -55,7 +55,7 @@ def LP_logout():
 def RM_index():
     return reportMissing.index()
 
-@app.route('/reportMissing/submit', methods=["GET","POST"])
+@app.route('/reportMissing/submit', methods = ['GET', 'POST'])
 def RM_submit():
     return reportMissing.submit()
 # ------

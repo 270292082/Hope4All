@@ -54,14 +54,28 @@
     
 }
 
-.content .profile-picture {
+.content .profile-pictureContainer {
     display: inline-block;
     background-color: lightgrey;
+    text-align: center;
     border-radius: 10px;
     height: 100%;
     margin-right: 1vw;
     width: 25vw;
 }
+
+.content .profile-picture {
+    height: 88%;
+    width: auto;
+    border: none;
+    border-radius: 10px;
+}
+
+.content .profile-pictureUpload {
+    height: 14%;
+    width: 100%;
+}
+
 
 .content .field1 .inputs {
     display: inline-block;
