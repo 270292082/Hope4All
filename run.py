@@ -7,6 +7,7 @@ import backend.loginPage as loginPage
 import backend.reportMissing as reportMissing
 import backend.respondFound as respondFound
 import backend.confirmMissing as confirmMissing
+import backend.missingPerson as missingPerson
 import backend.env as env
 
 # THINGS LEFT TO DO
@@ -60,12 +61,17 @@ def RM_submit():
     return reportMissing.submit()
 # ------
 
+# -- View Missing --
+@app.route("/view/<int:MID>")
+def MP_index(MID):
+    return missingPerson.index(MID)
+# ------
 
 # -- Confirm Missing Person Page --
 @app.route('/confirm/<int:MID>')
 def CM_confirm(MID):
     return confirmMissing.confirm(MID)
-# -----
+# ------
 
 
 

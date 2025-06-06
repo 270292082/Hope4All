@@ -1,5 +1,6 @@
 from flask import request, render_template
 from random import seed, randint
+from datetime import datetime
 import time
 import sqlite3 as db
 from backend.env import *
@@ -29,11 +30,13 @@ def submit():
 
         try:
             info = get_inputs()
+            print("info:", info)
             with db.connect(DB_PATH) as con:
                 cur = con.cursor()
-                cur.execute("INSERT INTO Missing (MID, FirstName, LastName, Age, IdentificationMark, Contact, MissingSince, LastKnownLocation, IncidentRelated, Country, Additional, ReporterName, ReporterRelation, ProfilePicture) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)", (MID, info[0],info[1],info[2],info[3],info[4],info[5],info[6],info[7],info[8],info[9],info[10], info[11], info[12]))
+                cur.execute("INSERT INTO Missing (MID, FirstName, LastName, DOB, Age, IdentificationMark, Contact, MissingSince, IncidentRelated, LastKnownLocation, Country, ReporterName, ReporterRelation, Additional, ProfilePicture) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", (MID, info[0],info[1],info[2],info[3],info[4],info[5],info[6],info[7],info[8],info[9],info[10], info[11], info[12], info[13]))
                 con.commit()
                 msg = "Successfully commited!"
+
         except:
             msg = "ERROR in Operation!"
             con.rollback()
@@ -55,7 +58,19 @@ def get_inputs() -> list:
 
     info.append(firstName)
     info.append(lastName)
-    info.append(request.form['iage'])
+    info.append(request.form['idob'])
+
+    print("Init Age")
+    # Calculate the Age.
+    dob = datetime.strptime(info[-1], "%d/%m/%Y").date()
+    print("Conv DOB:", dob)
+    today = datetime.today().date()
+    print("Got Today:", today)
+    age = today.year - dob.year - ((today.month, today.day) < (dob.month, dob.day)) 
+    print("Calculated Age:", age)
+    info.append(age)
+    print("Append:", age)
+
     info.append(request.form['iidmark'])
     info.append(request.form['icontact'])
     info.append(request.form['imissdate'])
