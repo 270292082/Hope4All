@@ -40,7 +40,7 @@
 		<div class="search-cards-container">
 			{% if search_results %}
 				{% for row in search_results %}
-				<a href="{{ url_for('MP_index', MID = row['MID']) }}" class="search-card-link" style="text-decoration: none; cursor: pointer;">
+				<a href="{{ url_for('MP_index', MID = row['MID']) }}" class="search-card-link" >
 					<div class="search-card">
 						{% if row['ProfilePicture'] %}
 							<img class="profile-icon" src="{{ url_for('static', filename = 'uploads/' ~ row['ProfilePicture']) }}" alt="profile">
@@ -49,8 +49,10 @@
 						{% endif %}
 
 						<div class="search-card-info">
-							<div class="search-card-name"   >{{ row['FirstName'] }} {{ row['LastName'] }}</div>
-							<div class="search-card-age"    >({{ row['Age'] }})</div>
+							<div class="search-card-name" >
+								{{ row['FirstName'] }} {{ row['LastName'] }}
+								<span class="search-card-age">({{ row['Age'] }})</span>
+							</div>
 							<div class="search-card-idMark" ><strong>ID Mark:</strong> {{ row['IdentificationMark'] if row['IdentificationMark'] else '-' }}</div>
 							<div class="search-card-contact"><strong>Contact Info:</strong> {{ row['Contact'] if row['Contact'] else '-' }}</div>
 						</div>
