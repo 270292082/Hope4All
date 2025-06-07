@@ -58,7 +58,6 @@ button {
 
 	/*background-color: #F7F0ED;*/
 	background-color: #f7f7f7;
-	z-index: 1;
 
 }
 
@@ -74,7 +73,6 @@ button {
 	background-color: #f7f7f7;
 	border-radius: 0px;
 	box-sizing: border-box;
-	z-index: 1;
 }
 
 /* new function for search - json dropdown */
@@ -295,4 +293,69 @@ button {
 
 .content .info p {
 	margin: 2px 0;
+}
+
+/* search-results.html */
+.search-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: flex-start;
+    padding: 40px 0 0 40px;
+}
+
+.search-card {
+    background: #ea5757;
+    border-radius: 32px;
+    width: 240px;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.07);
+    color: #fff;
+    font-family: "Open Sans", sans-serif;
+    padding: 32px 20px 24px 20px;
+    transition: box-shadow 0.2s;
+}
+
+.search-card:hover {
+    box-shadow: 0 10px 32px rgba(233,79,79,0.13);
+}
+
+.profile-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    margin-bottom: 24px;
+    background: #fff;
+    object-fit: cover;
+    border: 2px solid #f7f7f7;
+}
+
+.search-card-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.search-card-name {
+    font-size: 1.22rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.search-card-age,
+.search-card-idMark,
+.search-card-contact {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    word-break: break-all;
+}
+
+.no-results {
+    margin: 60px;
+    color: #ea5757;
+    font-size: 1.25rem;
 }

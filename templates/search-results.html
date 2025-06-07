@@ -1,6 +1,7 @@
 <head>
 	<title>Hope For All</title>
 	<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
@@ -8,6 +9,7 @@
 
 
 <body>
+	<!--to fix what ever is put in index.html - haven't fixed anything yet -->
 	<div class="banner">
 		<img src="{{ url_for('static', filename='ressources/logo-white.png')}}" class="logo"></img>
 
@@ -42,15 +44,28 @@
 
 	<!-- search results-->
 	{% if search_term %}
-		<div class="search-results">
+		<div class="search-cards-container">
 			{% if search_results %}
-				<ul>
-					{% for row in search_results %}
-						<li>{{ row['FirstName'] }} {{ row['LastName'] }}, Age : {{ row['Age'] }}</li>
-					{% endfor %}
-				</ul>
+				{% for row in search_results %}
+					<div class="search-card">
+						{% if row['ProfilePicture'] %}
+							<img class="profile-icon" src="{{ url_for('static', filename = 'uploads/' ~ row['ProfilePicture']) }}" alt="profile">
+						{% else %}
+							<img class="profile-icon" src="{{ url_for('static', filename = 'ressources/pp-placeholder.png') }}" alt="profile">
+						{% endif %}
+
+						<div class="search-card-info">
+							<div class="search-card-name"   >{{ row['FirstName'] }} {{ row['LastName'] }}</div>
+							<div class="search-card-age"    >Age: {{ row['Age'] }}</div>
+							<div class="search-card-idMark" >ID Mark: {{ row['IdentificationMark'] if row['IdentificationMark'] else '-' }}</div>
+							<div class="search-card-contact">Contact Info: {{ row['Contact'] if row['Contact'] else '-' }}</div>
+						</div>
+					</div>
+				{% endfor %}
 			{% else %}
-				<p>No matching results found.</p>
+				<div class="no-results">
+					<p>No matching results found.</p>
+				</div>
 			{% endif %}
 		</div>
 	{% endif %}

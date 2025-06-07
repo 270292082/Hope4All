@@ -83,8 +83,9 @@
 
 	</div>
 
-
+	<!-- JavaScript for dropdown function -->
 	<script>
+		// get input/ elements
 		const searchInput = document.getElementById('live-search');
 		const dropdown = document.getElementById('search-dropdown');
 
@@ -105,10 +106,22 @@
 					}
 					else {
 						dropdown.innerHTML = results.map(item => 
-							`<div class = "dropdown-item" >${item.FirstName} ${item.LastName}, Age: ${item.Age}</div>`
+							`<div class = "dropdown-item" data-mid = "${item.MID}" >${item.FirstName} ${item.LastName}, Age: ${item.Age}</div>`
 						).join('');
 					}
 					dropdown.style.display = 'block';
+
+					// Attach click handler - for each result - navigation
+					Array.from(dropdown.getElementsByClassName('dropdown-item')).forEach(function(elem)
+					{
+						elem.addEventListener('click', function()
+						{
+							const mid = this.getAttribute('data-mid');
+							if (mid) {
+								window.location.href = `/view/${mid}`;
+							}
+						});
+					});
 				});
 		});
 
@@ -121,5 +134,37 @@
 		{
 			if (dropdown.innerHTML.trim() !== '') dropdown.style.display = 'block';
 		});
+
+		// clear the search area when pressed anywhere
+		document.addEventListener('click', function(event)
+		{
+			// get input, dropdown and form elements
+			const searchInput = document.getElementById('live-search');
+			const dropdown = document.getElementById('search-dropdown');
+			const searchForm = searchInput.closest('form');
+
+			if (!searchForm.contains(event.target) && !dropdown.contains(event.target)) {
+				searchInput.value = '';
+				dropdown.style.display = 'none';
+				dropdown.innerHTML = '';
+			}
+		});
 	</script>
+
+	<script>
+		// page reload
+		window.addEventListener('pageshow', function(event) 
+		{
+			const searchInput = document.getElementById('live-search');
+			const dropdown = document.getElementById('search-dropdown');
+
+			if (searchInput) searchInput.value = '';
+
+			if (dropdown) {
+				dropdown.innerHTML = '';
+				dropdown.style.display = 'none';
+			}
+		});
+	</script>
+
 </body>
