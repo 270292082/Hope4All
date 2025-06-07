@@ -11,11 +11,23 @@
 	<div class="banner">
 		<img src="{{ url_for('static', filename='ressources/logo-white.png')}}" class="logo"></img>
 
+		<!-- Old Version Before Json -->
+		<!--
 		<form action="{{ url_for('search') }}" class="search" method="get" style="display: flex;">
 			<input type="text" class="searchBar" name="query" placeholder="Search.....">
 			<button type="submit" style="background: none; border: none; padding: 0; cursor: pointer;">
 				<img src="{{ url_for('static', filename='ressources/search.png') }}" class="searchLogo" alt="Search">
 			</button>
+		</form>
+		-->
+
+		<!-- New version in case it crashes -->
+		<form action="{{ url_for('search') }}" class="search" style="display: flex; position: relative; width: 100%;" autocomplete="off">
+			<input type="text" class="searchBar" id="live-search" name="query" autocomplete="off" placeholder="Search...." style="flex: 1;">
+			<button type="submit" style="background: none; border: none; padding: 0; cursor: pointer;">
+				<img src="{{ url_for('static', filename= 'ressources/search.png') }}" class="searchLogo" alt="Search">
+			</button>
+			<div id="search-dropdown" class="search-dropdown" style="display: none;"></div>
 		</form>
 
 
@@ -70,4 +82,44 @@
 	</div>
 
 	</div>
+
+
+	<script>
+		const searchInput = document.getElementById('live-search');
+		const dropdown = document.getElementById('search-dropdown');
+
+		searchInput.addEventListener('input', function()
+		{
+			const query = this.value.trim();
+			if (query.length === 0) {
+				dropdown.innerHTML = '';
+				dropdown.style.display = 'none';
+				return;
+			}
+
+			fetch(`/search_json?query=${encodeURIComponent(query)}`)
+				.then(response => response.json())
+				.then(results => {
+					if (results.length === 0) {
+						dropdown.innerHTML = '<div class = "dropdown-item" >No results found.</div>';
+					}
+					else {
+						dropdown.innerHTML = results.map(item => 
+							`<div class = "dropdown-item" >${item.FirstName} ${item.LastName}, Age: ${item.Age}</div>`
+						).join('');
+					}
+					dropdown.style.display = 'block';
+				});
+		});
+
+		searchInput.addEventListener('blur', function()
+		{
+			setTimeout(() => { dropdown.style.display = 'none'; }, 150);
+		});
+
+		searchInput.addEventListener('focus', function()
+		{
+			if (dropdown.innerHTML.trim() !== '') dropdown.style.display = 'block';
+		});
+	</script>
 </body>

@@ -26,12 +26,12 @@ def index():
 # -- Search Function --
 @app.route('/search', methods = ['GET'])
 def search():
-    query = request.args.get('query','').strip()
-
-    # return to home page if no query
-    if not query:
-        return redirect(url_for('index'))
     return searchFunction.search()
+
+# search function json
+@app.route('/search_json', methods = ['GET'])
+def search_json():
+    return searchFunction.search_json()
 # ------
 
 
