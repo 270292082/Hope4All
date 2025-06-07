@@ -1,6 +1,7 @@
 <head>
 	<title>Hope For All</title>
 	<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
@@ -83,7 +84,10 @@
 
 	</div>
 
+	
 	<!-- JavaScript for dropdown function -->
+	<script src="{{ url_for('static', filename = 'javascript/search.js')}}"></script>
+	<!--
 	<script>
 		// get input/ elements
 		const searchInput = document.getElementById('live-search');
@@ -166,5 +170,6 @@
 			}
 		});
 	</script>
+	-->
 
 </body>

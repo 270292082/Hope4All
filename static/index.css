@@ -295,28 +295,29 @@ button {
 	margin: 2px 0;
 }
 
+
 /* search-results.html */
 .search-cards-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 50px;
     justify-content: flex-start;
-    padding: 40px 0 0 40px;
+    padding: 80px 0 0 35px;
 }
 
 .search-card {
-    background: #ea5757;
-    border-radius: 32px;
-    width: 240px;
-    min-height: 320px;
+    background: #e94f4f;
+    border-radius: 30px;
+    width: 250px;
+    min-height: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
     box-shadow: 0 6px 24px rgba(0,0,0,0.07);
     color: #fff;
     font-family: "Open Sans", sans-serif;
-    padding: 32px 20px 24px 20px;
-    transition: box-shadow 0.2s;
+    padding: 20px;
+    transition: box-shadow 0.2s, transform 0.13s;
 }
 
 .search-card:hover {
@@ -324,9 +325,9 @@ button {
 }
 
 .profile-icon {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    border-radius: 30px;
     margin-bottom: 24px;
     background: #fff;
     object-fit: cover;
@@ -340,22 +341,46 @@ button {
     align-items: flex-start;
 }
 
-.search-card-name {
-    font-size: 1.22rem;
+.search-card-name,
+.search-card-age {
+    font-size: 1.27rem;
     font-weight: 700;
     margin-bottom: 12px;
+	letter-spacing: 0.01rem;
 }
 
-.search-card-age,
 .search-card-idMark,
 .search-card-contact {
-    font-size: 1rem;
+    font-size: 1.07rem;
     margin-bottom: 8px;
     word-break: break-all;
+	letter-spacing: 0.01rem;
+	margin-top: 15px;
 }
 
 .no-results {
     margin: 60px;
-    color: #ea5757;
+    color: #e94f4f;
     font-size: 1.25rem;
+}
+
+.back-btn {
+	display: inline-block;
+    background: #fff;
+    color: #ea5757;
+    border: 2px solid #ea5757;
+    border-radius: 24px;
+    font-size: 1.08rem;
+    font-weight: 600;
+    padding: 12px 34px;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: background 0.17s, color 0.17s, box-shadow 0.13s;
+}
+
+.back-btn:hover {
+    background: #ea5757;
+    color: #fff;
+    box-shadow: 0 4px 18px rgba(233,87,87,0.09);
+    text-decoration: none;
 }
