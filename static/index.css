@@ -303,6 +303,7 @@ button {
 	gap: 20px;
 	justify-content: flex-start;
 	padding: 80px 20px 0 20px;
+	box-sizing: border-box;
 }
 
 .search-card-link {
@@ -313,9 +314,9 @@ button {
 .search-card {
     background: #e94f4f;
     border-radius: 30px;
-    width: 95%;
+    width: 99%;
 	max-width: 100%;
-	min-width: 400px;
+	min-width: 250px;
     min-height: 160px;
     display: flex;
     flex-direction: row;
@@ -323,13 +324,15 @@ button {
     box-shadow: 0 6px 24px rgba(0,0,0,0.07);
     color: #fff;
     font-family: "Open Sans", sans-serif;
-    padding: 15px 50px;
+    padding: 5px;
 	margin: 0 auto;
     transition: box-shadow 0.2s, transform 0.13s;
 }
 
 .search-card:hover {
-    box-shadow: 0 10px 32px rgba(233,79,79,0.13);
+    color: #fff;
+	background-color: #f68282;
+	box-shadow: 0 10px 32px rgba(233,79,79,0.13);
 }
 
 .profile-icon {
@@ -354,7 +357,7 @@ button {
 
 .search-card-name,
 .search-card-age {
-    font-size: 18pt;
+    font-size: 16pt;
     font-weight: 700;
     margin-bottom: 12px;
 	letter-spacing: 0.01rem;
