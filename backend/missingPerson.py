@@ -26,6 +26,6 @@ def get_image(MID):
     image = cur.fetchone()
     cur.close()
     con.close()
-    if image:
+    if image != ('',):
         return base64.b64encode(image[0]).decode('utf-8')
     return None

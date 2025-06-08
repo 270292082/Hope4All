@@ -65,14 +65,16 @@
 	<div class="incidents">
 			<div class="content">
 				{% for missing in missings %}
-					<div class="missing-person-card">
-						<img class="profile-picture">
-						<h3>{{ missing.FirstName }}</h3>
-						<div class="info">
-							<p>{{ missing.age }} yrs</p>
-							<p>{{ missing.LastKnownLocation }}</p>
+					<a href="{{ url_for('MP_index', MID = missing['MID']) }}" style="text-decoration: none ; color: #fff;">
+						<div class="missing-person-card">
+							<img class="profile-picture">
+							<h3>{{ missing.FirstName }}</h3>
+							<div class="info">
+								<p>{{ missing.age }} yrs</p>
+								<p>{{ missing.LastKnownLocation }}</p>
+							</div>
 						</div>
-					</div>
+					</a>
 				{% endfor %}
 			</div>
 		</div>
