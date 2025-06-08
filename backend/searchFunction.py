@@ -15,7 +15,7 @@ def search():
 
         # allow fullname, firstname, lastname, age and partial name search
         results = conn.execute(
-            "SELECT MID, ProfilePicture, FirstName, LastName, Age, IdentificationMark, Contact from Missing WHERE LOWER(FirstName) LIKE ? OR LOWER(LastName) LIKE ? OR LOWER(FirstName || ' ' || LastName) LIKE ? OR Age = ?",
+            "SELECT MID, FirstName, LastName, Age, IdentificationMark, Contact from Missing WHERE LOWER(FirstName) LIKE ? OR LOWER(LastName) LIKE ? OR LOWER(FirstName || ' ' || LastName) LIKE ? OR Age = ?",
             (f"%{query}%", f"%{query}%", f"%{query}%", query if query.isdigit() else -1)
         ).fetchall()
         conn.close()
@@ -24,7 +24,7 @@ def search():
     for result in results:
         images[result["MID"]] = get_image(result["MID"]) 
 
-    return render_template('search-results.html', missings = [], search_results = results, search_term = query)
+    return render_template('search-results.html', missings = [], search_results = results, images=images, search_term = query)
 
 
 def search_json():
