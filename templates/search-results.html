@@ -43,7 +43,7 @@
 				<a href="{{ url_for('MP_index', MID = row['MID']) }}" class="search-card-link" >
 					<div class="search-card">
 						{% if row['ProfilePicture'] %}
-							<img class="profile-icon" src="{{ url_for('static', filename = 'uploads/' ~ row['ProfilePicture']) }}" alt="profile">
+							<img class="profile-icon" src="{{ row['ProfilePicture'] }}" alt="profile">
 						{% else %}
 							<img class="profile-icon" src="{{ url_for('static', filename = 'ressources/pp-placeholder.png') }}" alt="profile">
 						{% endif %}
