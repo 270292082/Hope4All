@@ -314,10 +314,14 @@ button {
 .search-card {
     background: #e94f4f;
     border-radius: 30px;
+<<<<<<< HEAD
     width: 99%;
 	max-width: 100%;
 	min-width: 250px;
     min-height: 160px;
+=======
+    width: 30vw;
+>>>>>>> 8c435705e0644b15e7ad2a63a1c5b68f510892cb
     display: flex;
     flex-direction: row;
     align-items: center;
