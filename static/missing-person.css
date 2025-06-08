@@ -72,6 +72,8 @@ body{
     height: 100%;
     margin-left: 1w;
     width: 30vw;
+    object-fit: cover;
+
 }
 
 .content .field1 .info1 label {
