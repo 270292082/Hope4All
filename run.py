@@ -78,7 +78,7 @@ def CM_confirm(MID):
 # -- Respond Found Page --
 @app.route('/respond/<int:MID>', methods = ['GET', 'POST'])
 def RF_found(MID): 
-    respondFound.found(MID)
+    return respondFound.found(MID)
 # ------
 
 

@@ -5,10 +5,10 @@ def found(MID):
     #check user login
     if 'userEmail' not in session:
         #save current page url before redirecting to login
-        session['next'] = url_for('respondfound', MID = MID)
+        session['next'] = url_for('RF_found', MID = MID)
 
         flash("Please log in to respond to this report.", 'error')
-        return redirect(url_for('login'))
+        return redirect(url_for('LP_login'))
 
     conn = db_connection()
     missingPerson = conn.execute('SELECT * FROM Missing WHERE MID = ?', (MID,)).fetchone()

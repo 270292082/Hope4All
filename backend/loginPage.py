@@ -35,16 +35,17 @@ def login():
 def register():
     if request.method == 'POST':
         email = request.form['email']
-        name = request.form['fullname'].split()
+        fname = request.form['firstname']
+        lname = request.form['lastname']
         dob = request.form['dob']
         contact = request.form['contact']
         role = request.form['role']
         password = request.form['password']
         confirm_password = request.form['confirm_password']
 
-        if len(name) < 2:
-            flash("Please enter your first name and last name!", 'error')
-            return redirect(url_for('register'))
+        #if len(name) < 2:
+            #flash("Please enter your first name and last name!", 'error')
+            #return redirect(url_for('LP_register'))
 
         if password != confirm_password:
             flash("Passwords do not match.", 'error')
@@ -59,7 +60,7 @@ def register():
             return redirect('/login')
         
         conn.execute(
-            'INSERT INTO Rescuer (FirstName, LastName, DOB, Contact, Role, Email, Password) VALUES (?,?,?,?,?,?,?)', (name[0], name[1], dob, contact, role, email, password)
+            'INSERT INTO Rescuer (FirstName, LastName, DOB, Contact, Role, Email, Password) VALUES (?,?,?,?,?,?,?)', (fname[0], lname[1], dob, contact, role, email, password)
         )
         conn.commit()
         conn.close()
