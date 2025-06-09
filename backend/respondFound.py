@@ -35,4 +35,4 @@ def found(MID):
         return redirect(url_for('homepage'))
     
     conn.close()
-    return render_template('respondfound.html', missingPerson = missingPerson, rescuer = rescuer)
+    return render_template('respond-found.html', missingPerson = missingPerson, rescuer = rescuer)
