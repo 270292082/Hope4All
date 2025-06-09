@@ -274,11 +274,17 @@ button {
 	align-items: center;
 	background-color: #e94f4f;
 	border-radius: 10px;
-	padding: 10px 10px;
+	padding: 10px 6px;
 	margin: 10px 20px;
+<<<<<<< HEAD
 	margin-top: 60px;
 	height: 250px; 
 	width: 150px;
+=======
+	margin-top: 40px;
+	height: 320px; 
+	width: 250px;
+>>>>>>> b39aeac6b18883d67703862e029454f9088e3f51
 	text-align: center;
 }
 
