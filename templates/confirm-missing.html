@@ -45,7 +45,9 @@
             </div>
 
             <div class="footer">
-                <button class="confirm-btn" onclick="location.href = 'respond/{{ missingPerson[MID] }}'">I am reporting the correct person.</button>
+                <a href="/respond/{{ missingPerson['MID'] }}">
+                    <button class="confirm-btn">I am reporting the correct person.</button>
+                </a>
             </div>
 
         </div>
