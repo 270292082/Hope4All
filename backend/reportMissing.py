@@ -1,4 +1,4 @@
-from flask import request, render_template
+from flask import request, render_template, redirect, flash
 from random import seed, randint
 from datetime import datetime
 import time
@@ -35,15 +35,16 @@ def submit():
                 cur = con.cursor()
                 cur.execute("INSERT INTO Missing (MID, FirstName, LastName, DOB, Age, IdentificationMark, Contact, MissingSince, IncidentRelated, LastKnownLocation, Country, ReporterName, ReporterRelation, Additional, ProfilePicture) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", (MID, info[0],info[1],info[2],info[3],info[4],info[5],info[6],info[7],info[8],info[9],info[10], info[11], info[12], info[13]))
                 con.commit()
-                msg = "Successfully commited!"
+                flash("Successfully commited!")
 
         except:
-            msg = "ERROR in Operation!"
+            flash("ERROR in operation!")
+            print("ERROR!")
             con.rollback()
 
         finally:
             con.close()
-            return msg
+            return redirect('/')
 
 def get_inputs() -> list:
     info = []
@@ -81,9 +82,11 @@ def get_inputs() -> list:
     info.append(request.form['irelation'])
     info.append(request.form['inotes'])
     file = request.files['ipp']
+    print(file)
     if file:
         image_data = file.read()
         mimetype = file.mimetype
-
-    info.append(image_data)
+        info.append(image_data)
+    else:
+        info.append('')
     return info

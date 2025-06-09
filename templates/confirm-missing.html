@@ -19,8 +19,8 @@
             <p>Confirm the following information before reporting!</p>
             <div class="info-section">
                 <div class="profile-container">
-                    {% if missingPerson['Photo'] %}
-                        <img src="{{ url_for('static', filename = 'uploads/' + missingPerson['Photo'])}}" alt="Photo" class="profile">
+                    {% if image %}
+                        <img src="data:image/jpg;base64,{{ image }}" alt="Photo" class="profile">
                     {% else %}
                         <img src="{{ url_for('static', filename = 'ressources/pp-placeholder.png') }}" alt="No Photo" class="profile">
                     {% endif %}
@@ -45,7 +45,7 @@
             </div>
 
             <div class="footer">
-                <button class="confirm-btn">I am reporting the correct person.</button>
+                <button class="confirm-btn" onclick="location.href = 'respond/{{ missingPerson[MID] }}'">I am reporting the correct person.</button>
             </div>
 
         </div>

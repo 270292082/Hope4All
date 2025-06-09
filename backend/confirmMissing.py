@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 import sqlite3 as db
 from backend.env import *
+from backend.missingPerson import get_image
 
 def confirm(MID):
     conn = db_connection()
@@ -10,4 +11,6 @@ def confirm(MID):
 
     if not missingPerson:
         return "Missing Person not found.",404
-    return render_template('confirm-missing.html', missingPerson = missingPerson)
+
+    image = get_image(missingPerson['MID']) 
+    return render_template('confirm-missing.html', missingPerson = missingPerson, image=image)

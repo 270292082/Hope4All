@@ -270,15 +270,40 @@ button {
 
 
 .content .missing-person-card {
+	display: block;
+	align-items: center;
 	background-color: #e94f4f;
 	border-radius: 10px;
-	padding: 0.2px 10px;
-	margin: 10px 10px;
-	margin-top: 70px;
-	height: 110px; 
-	width: 160px;
+	padding: 10px 6px;
+	margin: 10px 20px;
+	margin-top: 60px;
+	height: 250px; 
+	width: 150px;
+	margin-top: 40px;
+	height: 320px; 
+	width: 250px;
+	text-align: center;
 }
 
+.content .missing-person-card:hover {
+   	color: #fff;
+	background-color: #f68282;
+	box-shadow: 0 10px 32px rgba(233,79,79,0.13);
+
+}
+
+.content .missing-person-card .profile-picture {
+	height: 200px;
+	width: 200px;
+	
+	background-color: #fff;
+	
+	border-radius: 50%;
+	
+	max-height: 100%;
+	max-width: 100%;
+
+}
 
 .content .missing-person-card .info {
 	display: block;
@@ -318,7 +343,6 @@ button {
 	max-width: 100%;
 	min-width: 250px;
     min-height: 160px;
-    width: 30vw;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -335,6 +359,8 @@ button {
 	background-color: #f68282;
 	box-shadow: 0 10px 32px rgba(233,79,79,0.13);
 }
+
+
 
 .profile-icon {
     width: 100px;

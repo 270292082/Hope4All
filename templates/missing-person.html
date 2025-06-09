@@ -9,7 +9,7 @@
 
 <body>
 
-    <button class="close" onclick="window.location.href='/'">&times;</button>
+    <button class="close" onclick="window.location.href='/';">&times;</button>
 	<div class="header">
 		<label><b>Report Missing Person</b></label>
 	</div>
@@ -55,5 +55,6 @@
 				<label class="notes"><b>{{ missingPerson[14] }}</b></label>
 			</div>
 		</div>
+		<button class="found" onclick="location.href = '/confirm/{{ missingPerson[0] }}'">Found!</button>
 	</div>
 </body>

@@ -3,13 +3,14 @@ body{
 }
 
 .close {
-	display: flex;
-	position: absolute;
-	height: 35px;
-	width: auto;
-
-	top: 18px;
-	right: 10px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 50px;
+    cursor: pointer;
+    z-index: 999;
 }
 
 .header {
@@ -131,4 +132,10 @@ body{
     font-size: 16px;
     font-family: 'Open Sans';
     font-style: normal;
+}
+
+.content .found {
+    background-color: #e94f4f;
+    color: #fff;
+    cursor: pointer;
 }
