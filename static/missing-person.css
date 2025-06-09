@@ -133,3 +133,9 @@ body{
     font-family: 'Open Sans';
     font-style: normal;
 }
+
+.content .found {
+    background-color: #e94f4f;
+    color: #fff;
+    cursor: pointer;
+}

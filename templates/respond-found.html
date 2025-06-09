@@ -17,7 +17,11 @@
     
             <div class="missingperson-details">
                 <!--to fill image source-->
-                <img src="{{ missingPerson['Photo'] or url_for('static', filename = 'images/placeholder.jpg') }}" class="missingperson-photo">
+                {% if image %}
+                    <img src="data:image/jpg;base64,{{ image }}" class="missingperson-photo">
+                {% else %}
+                    <img src="{{ url_for('static', filename='ressources/pp-placeholder.png')}}" class="missingperson-photo">
+                {% endif %}
 
                 <div class="info">
                     <p><strong>Name</strong><br>{{ missingPerson['FirstName'] }} {{ missingPerson['LastName'] }}</p>

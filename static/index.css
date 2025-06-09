@@ -285,6 +285,13 @@ button {
 	text-align: center;
 }
 
+.content .missing-person-card:hover {
+   	color: #fff;
+	background-color: #f68282;
+	box-shadow: 0 10px 32px rgba(233,79,79,0.13);
+
+}
+
 .content .missing-person-card .profile-picture {
 	height: 200px;
 	width: 200px;

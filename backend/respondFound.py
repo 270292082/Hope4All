@@ -1,5 +1,6 @@
 from flask import Flask, session, render_template, request, flash, redirect, url_for
 from backend.env import *
+from backend.missingPerson import get_image 
 
 def found(MID):
     #check user login
@@ -35,4 +36,7 @@ def found(MID):
         return redirect(url_for('homepage'))
     
     conn.close()
-    return render_template('respond-found.html', missingPerson = missingPerson, rescuer = rescuer)
+
+    image = get_image(missingPerson['MID'])
+
+    return render_template('respond-found.html', missingPerson = missingPerson, image=image, rescuer = rescuer)
