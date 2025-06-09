@@ -39,6 +39,7 @@ def submit():
 
         except:
             flash("ERROR in operation!")
+            print("ERROR!")
             con.rollback()
 
         finally:
