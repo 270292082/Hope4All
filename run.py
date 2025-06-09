@@ -20,7 +20,12 @@ db_name = "database/Hope4All.db"
 
 @app.route('/')
 def index():
-    return render_template('index.html', missings = env.getMissing())
+    missings = env.getMissing()
+    images = {}
+    for missing in missings:
+        images[missing['MID']] = missingPerson.get_image(missing['MID'])
+
+    return render_template('index.html', missings = missings, images=images)
 
 
 # -- Search Function --
