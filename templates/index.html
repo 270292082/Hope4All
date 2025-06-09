@@ -67,11 +67,15 @@
 				{% for missing in missings %}
 					<a href="{{ url_for('MP_index', MID = missing['MID']) }}" style="text-decoration: none ; color: #fff;">
 						<div class="missing-person-card">
-							<img class="profile-picture">
-							<h3>{{ missing.FirstName }}</h3>
+							{% if images[missing['MID']] %}
+								<img class="profile-picture" src="data:image/jpg;base64,{{ images[missing['MID']] }}">
+							{% else %}
+								<img class="profile-picture" src="{{ url_for('static', filename='ressources/pp-placeholder.png') }}">
+							{% endif %}
+							<h3>{{ missing["FirstName"] }}</h3>
 							<div class="info">
-								<p>{{ missing.age }} yrs</p>
-								<p>{{ missing.LastKnownLocation }}</p>
+								<p>{{ missing["Age"] }} yrs</p>
+								<p>{{ missing["LastKnownLocation"] }}</p>
 							</div>
 						</div>
 					</a>
