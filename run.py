@@ -1,5 +1,4 @@
 from flask import Flask, request, render_template, redirect, url_for
-import sqlite3 as db
 from random import randint, seed
 
 import backend.searchFunction as searchFunction
