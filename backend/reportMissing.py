@@ -74,7 +74,6 @@ def get_inputs() -> list:
     info.append(request.form['ireportername'])
     info.append(request.form['irelation'])
     info.append(request.form['inotes'])
-    print(info)
     file = request.files['ipp']
     if file:
         image_data = file.read()

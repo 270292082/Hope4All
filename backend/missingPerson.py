@@ -4,5 +4,4 @@ from backend.env import *
 def index(MID):
     missingPerson = getMissingInfo(MID)
     image = get_image(MID)
-    print(image)
     return render_template('missing-person.html', missingPerson=missingPerson, image=image)

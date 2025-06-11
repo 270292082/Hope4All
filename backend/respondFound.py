@@ -21,7 +21,6 @@ def found(MID):
         foundCondition = request.form['foundCondition']
         foundContact = request.form['foundContact']
 
-        print("RESCUER:\n",rescuer)
         reporterName = rescuer['FirstName'] + " " + rescuer["LastName"] 
         reporterRole = rescuer['Role'] 
         RId = rescuer['RID']
