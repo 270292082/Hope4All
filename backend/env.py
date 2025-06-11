@@ -16,3 +16,12 @@ def getMissing():
     cur.close()
     con.close()
     return missings
+
+def getNotFound():
+    con = db_connection()
+    cur = con.cursor()
+    cur.execute("SELECT * FROM Missing m LEFT JOIN Reports r ON m.MID = r.MID WHERE r.MID IS NULL;")
+    not_founds = cur.fetchall()
+    cur.close()
+    con.close()
+    return not_founds
