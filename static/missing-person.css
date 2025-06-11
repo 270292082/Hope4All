@@ -134,9 +134,20 @@ body{
     font-style: normal;
 }
 
-.content .found {
+.content .buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    margin: auto;
+}
+
+.content .buttons button {
     background-color: #e94f4f;
     color: #fff;
     cursor: pointer;
     font-size: 20px; 
+}
+
+.content .buttons .edit {
+    background-color: grey;
 }

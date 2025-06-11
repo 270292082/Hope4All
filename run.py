@@ -7,6 +7,7 @@ import backend.reportMissing as reportMissing
 import backend.respondFound as respondFound
 import backend.confirmMissing as confirmMissing
 import backend.missingPerson as missingPerson
+import backend.editPerson as editPerson
 import backend.env as env
 
 # THINGS LEFT TO DO
@@ -78,12 +79,23 @@ def CM_confirm(MID):
 # ------
 
 
-
 # -- Respond Found Page --
 @app.route('/respond/<int:MID>', methods = ['GET', 'POST'])
 def RF_found(MID): 
     return respondFound.found(MID)
 # ------
+
+
+# -- Edit Person Page --
+@app.route('/edit/<int:MID>')
+def EP_index(MID):
+    return editPerson.index(MID)
+
+@app.route("/editPerson/submit/<int:MID>", methods = ["POST"])
+def EP_submit(MID):
+    return editPerson.submit(MID)
+# ------
+
 
 
 if __name__ == '__main__':

@@ -1,5 +1,4 @@
 from flask import request, session, flash, redirect, url_for, render_template
-import sqlite3 as db
 from backend.env import *
 
 def login():

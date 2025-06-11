@@ -1,6 +1,6 @@
 <head>
 	<title>Report Missing Person</title>
-	<link rel="stylesheet" href="{{ url_for('static', filename='edit-person.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='report-missing.css') }}">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
@@ -8,48 +8,54 @@
 </head>
 
 <body>
-	<img class="close" src="{{ url_for('static', filename='ressources/cross.png') }}"></img>
+
+	<div class="closeContainer">
+    	<button class="close" onclick="window.location.href='/'">&times;</button>
+	</div>
+
 	<div class="header">
 		<label><b>Report Missing Person</b></label>
 	</div>
 
-	<div class="content">
-		<div class="field1">
-			<div class="profile-picture"></div>
-			<div class="info1">
-				<label>Name</label>
-				<label class="oname"><b>[name]</b></label>
-				<br>
-				<label>Age</label>
-				<label class="oage"><b>[age]</b></label>
-				<br>
-				<label>Identification Mark</label>
-				<label class="oidm"><b>[idm]</b></label>
-				<br>
-				<label>Contact Information</label>
-				<label class="ocontact"><b>[contact]</b></label>
-				<br>
-				<label>Missing Since</label>
-				<label class="omissing"><b>[missing]</b></label>
-				<br>
-				<label>Last Known Location</label>
-				<label class="ollocation"><b>[llocation]</b></label>
+	<form action="/editPerson/submit/{{ missingPerson['MID'] }}" method="POST" enctype="multipart/form-data">
+		<div class="content">
+			<div class="field1">
+				<div class="profile-pictureContainer">
+					<img class="profile-picture" id="preview" src="data:image/jpg;base64,{{ image }}">
+					<input name="ipp" id="ipp" type="file" class="profile-pictureUpload" accept="image/*"></input>
+				</div>
+				<div class="inputs">
+					<input class="iname" name="iname" type="text" placeholder="Missing Person's Name *" value="{{ missingPerson['FirstName'] }} {{ missingPerson['LastName'] }}"></input>
+					<input class="idob" name="idob" type="text" placeholder="Missing Person's DOB (dd/mm/yyyy) *" value="{{ missingPerson['DOB'] }}"></input>
+					<input class="iidmark" name="iidmark" type="text" placeholder="Missing Person's Identification Mark" value="{{ missingPerson['IdentificationMark'] }}"></input>
+					<input class="icontact" name="icontact" type="text" placeholder="Contact Information *" value="{{ missingPerson['Contact'] }}"></input>
+				</div>
 			</div>
+			<div class="field2">
+				<input class="imissdate" name="imissdate" type="text" placeholder="Missing Since (Date) *" value="{{ missingPerson['MissingSince'] }}"></input>
+				<input class="irelated" name="irelated" type="text" placeholder="Incident Related" value="{{ missingPerson['IncidentRelated'] }}"></input>
+				<input class="ilastlocation" name="ilastlocation" type="text" placeholder="Last Known Location (Address)" value="{{ missingPerson['LastKnownLocation'] }}"></input>
+				<input class="icountry" name="icountry" type="text" placeholder="Country" value="{{ missingPerson['Country'] }}"></input>
+				<input class="ireportername" name="ireportername" type="text" placeholder="Reporter's Name" value="{{ missingPerson['ReporterName'] }}"></input>
+				<input class="irelation" name="irelation" type="text" placeholder="Relation to Missing Person" value="{{ missingPerson['ReporterRelation'] }}"></input>
+				<input class="inotes" name="inotes" type="text" placeholder="Additional Notes" value="{{ missingPerson['Additional'] }}"></input>
+			</div>
+			<button type="submit">Submit</button>
 		</div>
-		<div class="field2">
-			<div class="info2">
-				<label>Incident Related</label>
-				<label><b>[incident]</b></label>
-			</div>
-			<div class="info3">
-				<label>Country</label>
-				<label><b>[country]</b></label>
-			</div>
-			<div class="info4">
-				<label>Additional Information</label>
-				<label class="notes"><b>[notes]</b></label>
-			</div>
-		</div>
-		<button>Edit</button>
-	</div>
+	</form>
 </body>
+
+<script>
+function handleFileUpload(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  console.log("User uploaded:", file.name);
+
+  // If you want to preview the image:
+  const preview = document.getElementById('preview');
+  preview.src = URL.createObjectURL(file);
+}
+
+document.getElementById('ipp').addEventListener('change', handleFileUpload);
+</script>

@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import render_template
 import sqlite3 as db
 from backend.env import *
 from backend.missingPerson import get_image

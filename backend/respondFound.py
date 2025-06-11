@@ -1,4 +1,4 @@
-from flask import Flask, session, render_template, request, flash, redirect, url_for
+from flask import session, render_template, request, flash, redirect, url_for
 from backend.env import *
 from backend.missingPerson import get_image 
 
