@@ -14,11 +14,11 @@ def login():
             if user['Password'] == password:
                 session['userEmail'] = email
                 flash('Login Successful', 'success')
-                #return redirect(url_for('homepage'))
+                #return redirect(url_for('/'))
 
                 # redirect to last accessed page
                 nextPage = session.pop('next', None)
-                return redirect(nextPage) if nextPage else redirect('/homepage')
+                return redirect(nextPage) if nextPage else redirect('/')
             
 
             else:
@@ -73,4 +73,4 @@ def register():
 def logout():
     session.pop('user', None)
     flash ('Logged out successfully')
-    return redirect('/homepage')
+    return redirect('/')
