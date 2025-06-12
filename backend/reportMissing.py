@@ -34,10 +34,8 @@ def submit():
                 cur = con.cursor()
                 cur.execute("INSERT INTO Missing (MID, FirstName, LastName, DOB, Age, IdentificationMark, Contact, MissingSince, IncidentRelated, LastKnownLocation, Country, ReporterName, ReporterRelation, Additional, ProfilePicture) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", (MID, info[0],info[1],info[2],info[3],info[4],info[5],info[6],info[7],info[8],info[9],info[10], info[11], info[12], info[13]))
                 con.commit()
-                flash("Successfully commited!")
 
         except:
-            flash("ERROR in operation!")
             con.rollback()
 
         finally:

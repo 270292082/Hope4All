@@ -18,12 +18,10 @@ def submit(MID):
                     cur.execute("UPDATE Missing SET ProfilePicture=? WHERE MID=?;", (info[13], MID))
                     con.commit()
 
-            flash("Successfully commited!")
 
 
 
         except:
-            flash("ERROR in operation!")
             con.rollback()
 
         finally:

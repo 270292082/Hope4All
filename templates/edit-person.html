@@ -1,5 +1,5 @@
 <head>
-	<title>Report Missing Person</title>
+	<title>Edit Missing Person</title>
 	<link rel="stylesheet" href="{{ url_for('static', filename='report-missing.css') }}">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
 	</div>
 
 	<div class="header">
-		<label><b>Report Missing Person</b></label>
+		<label><b>Edit Missing Person</b></label>
 	</div>
 
 	<form action="/editPerson/submit/{{ missingPerson['MID'] }}" method="POST" enctype="multipart/form-data">
@@ -28,7 +28,7 @@
 					<input class="iname" name="iname" type="text" placeholder="Missing Person's Name *" value="{{ missingPerson['FirstName'] }} {{ missingPerson['LastName'] }}"></input>
 					<input class="idob" name="idob" type="text" placeholder="Missing Person's DOB (dd/mm/yyyy) *" value="{{ missingPerson['DOB'] }}"></input>
 					<input class="iidmark" name="iidmark" type="text" placeholder="Missing Person's Identification Mark" value="{{ missingPerson['IdentificationMark'] }}"></input>
-					<input class="icontact" name="icontact" type="text" placeholder="Contact Information *" value="{{ missingPerson['Contact'] }}"></input>
+					<input class="icontact" name="icontact" type="text" placeholder="Contact Information of Reporter *" value="{{ missingPerson['Contact'] }}"></input>
 				</div>
 			</div>
 			<div class="field2">

@@ -133,6 +133,7 @@ button {
     width: 40%;
     margin: auto;
     margin-top: 150px;
+    padding-bottom: 30px;
 }
 
 .buttons button {
