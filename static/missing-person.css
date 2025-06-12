@@ -1,5 +1,15 @@
-body{
-    overflow: hidden;
+body {
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 16px;
+
+    width: 90vw;
+    height: 90vh;
+    font-size: 2.5vmin;
+
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
 }
 
 .close {
@@ -28,25 +38,7 @@ body{
 	font-size: 35px;
 }
 
-.content {
-    margin-left:auto;
-    margin-right: auto;
-    margin-top: 16px;
-
-    width: 90vw;
-    height: 90vh;
-    font-size: 2.5vmin;
-
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
-
-    overflow: hidden;
-}
-
-
-
-.content .field1 {
+.field1 {
     top: 0;
     margin-left: auto;
     margin-right: auto;
@@ -59,14 +51,14 @@ body{
 
 
 
-.content .field1 .info1 {
+.field1 .info1 {
     display: inline-block;
     margin-left: 4vw;
     text-align:left;
     position: absolute;
 }
 
-.content .field1 .profile-picture {
+.field1 .profile-picture {
     display: inline-block;
     background-color: lightgrey;
     border-radius: 10px;
@@ -77,35 +69,35 @@ body{
 
 }
 
-.content .field1 .info1 label {
+.field1 .info1 label {
     display: grid;
 }
 
-.content .field2 {
+.field2 {
     padding-top: 1.5vh;
     width: 100%;
     height: 26vh;
 }
 
-.content .field2 .info2 {
+.field2 .info2 {
     height: 40%;
     width: calc(50% - 3px);
     display: inline-block;
 }
-.content .field2 .info2 label{
+.field2 .info2 label{
     display: grid;
 }
 
-.content .field2 .info3 {
+.field2 .info3 {
     display: inline-block;
     height: 40%;
     width: calc(50% - 2px);
 }
-.content .field2 .info3 label{
+.field2 .info3 label{
     display: grid;
 }
 
-.content .field2 .info4 {
+.field2 .info4 {
     width: 100%;
     height: 60%;
     display: grid;
@@ -113,11 +105,11 @@ body{
     overflow-wrap: break-word;
     white-space: normal;
 }
-.content .field2 .info4 .notes {
+.field2 .info4 .notes {
     width: 100%;
 }
 
-.content button {
+button {
     margin: auto;
     display: flex;
     justify-content: center;
@@ -134,20 +126,22 @@ body{
     font-style: normal;
 }
 
-.content .buttons {
+.buttons {
     display: flex;
+    position: relative;
     justify-content: space-between;
     width: 40%;
     margin: auto;
+    margin-top: 150px;
 }
 
-.content .buttons button {
+.buttons button {
     background-color: #e94f4f;
     color: #fff;
     cursor: pointer;
     font-size: 20px; 
 }
 
-.content .buttons .edit {
+.buttons .edit {
     background-color: grey;
 }
