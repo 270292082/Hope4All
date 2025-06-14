@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missing Person - After Response</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'after-response.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="response-container">
+        <button class="close-btn" onclick="window.history.back()">&times;</button>
+        <h1>Missing Person Response</h1>
+        <div class="response-content">
+            <div class="response-left">
+                <div class="photo-box">
+                    {% if report.ProfilePicture %}
+                        <img src="data:image/png;base64,{{ report.ProfilePicture | b64encode | decode('utf-8') }}" class="profile-img" alt="Photo">
+                    {% else %}
+                        <img src="{{ url_for('static', filename='ressources/pp-placeholder.png') }}" class="profile-img" alt="No Photo">
+                    {% endif %}
+                </div>
+                <div class="details-col">
+                    <div>Country<br><span class="bold">{{ report.Country or '—' }}</span></div>
+                    <div>Incident Related<br><span class="bold">{{ report.IncidentRelated or 'None' }}</span></div>
+                </div>
+            </div>
+            <div class="response-right">
+                <div><b>Name</b><br>{{ report.FirstName }} {{ report.LastName }}</div>
+                <div><b>Age</b><br>{{ report.Age }}</div>
+                <div><b>Identification Mark</b><br><span class="bold">{{ report.IdentificationMark or '—' }}</span></div>
+                <div><b>Response</b><br><span class="bold">{{ report.Response }}</span></div>
+                <div><b>Where</b><br><span class="bold">{{ report.Location }}</span></div>
+                <div><b>When</b><br><span class="bold">{{ report.Date }}</span></div>
+                <div><b>Responder Name</b><br><span class="bold">{{ report.ResponderName }}</span></div>
+                <div><b>Responder Contact Information</b><br><span class="bold">{{ report.ResponderContact }}</span></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

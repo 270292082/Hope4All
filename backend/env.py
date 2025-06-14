@@ -41,6 +41,7 @@ def get_image(MID):
     cur.close()
     con.close()
     if image != ('',) and image != ('BLOB',):
+    #if image and image[0] is not None:
         return base64.b64encode(image[0]).decode('utf-8')
     return None
 
