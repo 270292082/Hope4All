@@ -30,16 +30,12 @@ def submit():
 
         try:
             info = get_inputs()
-            print("info:", info)
             with db.connect(DB_PATH) as con:
                 cur = con.cursor()
                 cur.execute("INSERT INTO Missing (MID, FirstName, LastName, DOB, Age, IdentificationMark, Contact, MissingSince, IncidentRelated, LastKnownLocation, Country, ReporterName, ReporterRelation, Additional, ProfilePicture) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", (MID, info[0],info[1],info[2],info[3],info[4],info[5],info[6],info[7],info[8],info[9],info[10], info[11], info[12], info[13]))
                 con.commit()
-                flash("Successfully commited!")
 
         except:
-            flash("ERROR in operation!")
-            print("ERROR!")
             con.rollback()
 
         finally:
@@ -61,16 +57,11 @@ def get_inputs() -> list:
     info.append(lastName)
     info.append(request.form['idob'])
 
-    print("Init Age")
     # Calculate the Age.
     dob = datetime.strptime(info[-1], "%d/%m/%Y").date()
-    print("Conv DOB:", dob)
     today = datetime.today().date()
-    print("Got Today:", today)
     age = today.year - dob.year - ((today.month, today.day) < (dob.month, dob.day)) 
-    print("Calculated Age:", age)
     info.append(age)
-    print("Append:", age)
 
     info.append(request.form['iidmark'])
     info.append(request.form['icontact'])
@@ -82,7 +73,6 @@ def get_inputs() -> list:
     info.append(request.form['irelation'])
     info.append(request.form['inotes'])
     file = request.files['ipp']
-    print(file)
     if file:
         image_data = file.read()
         mimetype = file.mimetype

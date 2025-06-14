@@ -14,47 +14,48 @@
 		<label><b>Report Missing Person</b></label>
 	</div>
 
-	<div class="content">
-		<div class="field1">
-			{% if image %}
-				<img class="profile-picture" src="data:image/jpg;base64,{{ image }}"></img>
-			{% else %}
-				<div class="profile-picture"></div>
-			{% endif %}
-			<div class="info1">
-				<label>Name</label>
-				<label class="oname"><b>{{ missingPerson[2] }} {{ missingPerson[3] }}</b></label>
-				<br>
-				<label>Age</label>
-				<label class="oage"><b>{{ missingPerson[5] }}</b></label>
-				<br>
-				<label>Identification Mark</label>
-				<label class="oidm"><b>{{ missingPerson[6] }}</b></label>
-				<br>
-				<label>Contact Information</label>
-				<label class="ocontact"><b>{{ missingPerson[7] }}</b></label>
-				<br>
-				<label>Missing Since</label>
-				<label class="omissing"><b>{{ missingPerson[8] }}</b></label>
-				<br>
-				<label>Last Known Location</label>
-				<label class="ollocation"><b>{{ missingPerson[9] }}</b></label>
-			</div>
+	<div class="field1">
+		{% if image %}
+			<img class="profile-picture" src="data:image/jpg;base64,{{ image }}"></img>
+		{% else %}
+			<div class="profile-picture"></div>
+		{% endif %}
+		<div class="info1">
+			<label>Name</label>
+			<label class="oname"><b>{{ missingPerson[2] }} {{ missingPerson[3] }}</b></label>
+			<br>
+			<label>Age</label>
+			<label class="oage"><b>{{ missingPerson[5] }}</b></label>
+			<br>
+			<label>Identification Mark</label>
+			<label class="oidm"><b>{{ missingPerson[6] }}</b></label>
+			<br>
+			<label>Reporter Contact Information</label>
+			<label class="ocontact"><b>{{ missingPerson[7] }}</b></label>
+			<br>
+			<label>Missing Since</label>
+			<label class="omissing"><b>{{ missingPerson[8] }}</b></label>
+			<br>
+			<label>Last Known Location</label>
+			<label class="ollocation"><b>{{ missingPerson[9] }}</b></label>
 		</div>
-		<div class="field2">
-			<div class="info2">
-				<label>Incident Related</label>
-				<label><b>{{ missingPerson[10] }}</b></label>
-			</div>
-			<div class="info3">
-				<label>Country</label>
-				<label><b>{{ missingPerson[11] }}</b></label>
-			</div>
-			<div class="info4">
-				<label>Additional Information</label>
-				<label class="notes"><b>{{ missingPerson[14] }}</b></label>
-			</div>
+	</div>
+	<div class="field2">
+		<div class="info2">
+			<label>Incident Related</label>
+			<label><b>{{ missingPerson[10] }}</b></label>
 		</div>
+		<div class="info3">
+			<label>Country</label>
+			<label><b>{{ missingPerson[11] }}</b></label>
+		</div>
+		<div class="info4">
+			<label>Additional Information</label>
+			<label class="notes"><b>{{ missingPerson[14] }}</b></label>
+		</div>
+	</div>
+	<div class="buttons">
+		<button class="edit" onclick="location.href = '/edit/{{ missingPerson[0]}}'"><b>Edit</b></button>
 		<button class="found" onclick="location.href = '/confirm/{{ missingPerson[0] }}'"><b>Found!</b></button>
 	</div>
-</body>
+<body>

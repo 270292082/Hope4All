@@ -7,6 +7,7 @@ import backend.reportMissing as reportMissing
 import backend.respondFound as respondFound
 import backend.confirmMissing as confirmMissing
 import backend.missingPerson as missingPerson
+import backend.editPerson as editPerson
 import backend.env as env
 
 # THINGS LEFT TO DO
@@ -19,12 +20,12 @@ db_name = "database/Hope4All.db"
 
 @app.route('/')
 def index():
-    missings = env.getMissing()
+    not_founds = env.getNotFound()
     images = {}
-    for missing in missings:
+    for missing in not_founds:
         images[missing['MID']] = missingPerson.get_image(missing['MID'])
 
-    return render_template('index.html', missings = missings, images=images)
+    return render_template('index.html', missings = not_founds, images=images)
 
 
 # -- Search Function --
@@ -78,12 +79,23 @@ def CM_confirm(MID):
 # ------
 
 
-
 # -- Respond Found Page --
 @app.route('/respond/<int:MID>', methods = ['GET', 'POST'])
 def RF_found(MID): 
     return respondFound.found(MID)
 # ------
+
+
+# -- Edit Person Page --
+@app.route('/edit/<int:MID>')
+def EP_index(MID):
+    return editPerson.index(MID)
+
+@app.route("/editPerson/submit/<int:MID>", methods = ["POST"])
+def EP_submit(MID):
+    return editPerson.submit(MID)
+# ------
+
 
 
 if __name__ == '__main__':

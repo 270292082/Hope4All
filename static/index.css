@@ -216,11 +216,11 @@ button {
 
 .reportContainer {
 	display: flex;
+	position: sticky;
 	justify-content: center;
 	align-items: center;
-	margin-top: 100px;
+	top: 100px;
 
-	position: relative;
 	height: 50px;
 	width: 100%;
 
@@ -228,6 +228,7 @@ button {
 
 .reportContainer button {
 	display: flex;
+	position: sticky;
 	justify-content: center;
 	align-items: center;
 
@@ -256,7 +257,7 @@ button {
 
 
 .incidents{
-	margin-top: 20px;
+	margin-top: 100px;
 }
 
 
@@ -273,10 +274,9 @@ button {
 	display: block;
 	align-items: center;
 	background-color: #e94f4f;
-	border-radius: 10px;
-	padding: 10px 6px;
+	border-radius: 10%;
+	padding: 15px 6px;
 	margin: 10px 20px;
-	margin-top: 60px;
 	height: 250px; 
 	width: 150px;
 	margin-top: 40px;
@@ -300,7 +300,7 @@ button {
 	
 	background-color: #fff;
 	
-	border-radius: 50%;
+	border-radius: 40%;
 	
 	max-height: 100%;
 	max-width: 100%;

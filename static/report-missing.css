@@ -67,6 +67,8 @@
 .content .profile-picture {
     height: 88%;
     width: auto;
+    max-width: 100%;
+    object-fit: cover;
     border: none;
     border-radius: 10px;
 }
