@@ -34,12 +34,10 @@ def getNotFound():
 
 
 def get_image(MID):
-    print("GET IMAGE:", MID)
     con = db.connect(DB_PATH)
     cur = con.cursor()
     cur.execute("SELECT ProfilePicture FROM Missing WHERE MID == ?", (MID,))
     image = cur.fetchone()
-    print(image)
     cur.close()
     con.close()
     if image != ('',) and image != ('BLOB',):
