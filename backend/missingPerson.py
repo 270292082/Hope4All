@@ -12,12 +12,9 @@ def index(MID):
     ).fetchone()
 
     if report:
-        display = conn.execute(
-            "SELECT r.*, m.ProfilePicture, m.FirstName, m.LastName, m.Age, m.IdentificationMark, m.Country, m.IncidentRelated FROM Reports r JOIN Missing m ON r.MID = m.MID WHERE r.MID = ?", (MID,)
-        ).fetchone()
-
-        conn.close()
-        return render_template('after-response.html', report = display)
+        display = getMissingAfterResponse(MID)
+        image = get_image(MID)
+        return render_template('after-response.html', report = display, image = image)
     
     else:
         missingPerson = getMissingInfo(MID)

@@ -54,3 +54,24 @@ def getMissingInfo(MID):
     cur.close()
     con.close()
     return missing
+
+def getMissingAfterResponse(MID):
+    con = db.connect(DB_PATH)
+    con.row_factory = db.Row
+    cur = con.cursor()
+    cur.execute(
+        """
+        SELECT r.*, 
+            m.ProfilePicture, m.FirstName AS MissingFN, m.LastName AS MissingLN, m.Age, m.IdentificationMark, m.Country, m.IncidentRelated,
+            re.FirstName AS ResponderFN, re.LastName as ResponderLN, re.Role
+            FROM Reports r 
+            JOIN Missing m on r.MID = m.MID 
+            JOIN Rescuer re on r.RID = re.RID
+            WHERE r.MID = ?
+        """, (MID,)
+    )
+
+    result = cur.fetchone()
+    cur.close()
+    con.close()
+    return result
