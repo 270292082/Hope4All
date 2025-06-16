@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="{{ current_lang }}">
+
 <head>
 	<title>Hope For All</title>
 	<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
@@ -24,7 +27,7 @@
 
 		<!-- New version in case it crashes -->
 		<form action="{{ url_for('search') }}" class="search" style="display: flex; position: relative; width: 100%;" autocomplete="off">
-			<input type="text" class="searchBar" id="live-search" name="query" autocomplete="off" placeholder="Search...." style="flex: 1;">
+			<input type="text" class="searchBar" id="live-search" name="query" autocomplete="off" placeholder="{{ _('Search') }}..." style="flex: 1;">
 			<button type="submit" style="background: none; border: none; padding: 0; cursor: pointer;">
 				<img src="{{ url_for('static', filename= 'ressources/search.png') }}" class="searchLogo" alt="Search">
 			</button>
@@ -34,10 +37,10 @@
 
 		<div class="account">
 			<div class="signContainer">
-				<button onclick="location.href='/register';"><b>Sign Up</b></button>
+				<button onclick="location.href='/register';"><b>{{ _('Sign Up') }}</b></button>
 			</div>
 			<div class="loginContainer">
-				<button onclick="location.href='/login';"><b>Sign In</b></button>
+				<button onclick="location.href='/login';"><b>{{ _('Sign In') }}</b></button>
 			</div>
 		</div>
 
@@ -57,7 +60,7 @@
 	<div class="reportContainer">
 		<button class="report" onclick="location.href='/reportMissing';">
 			<img src="{{ url_for('static', filename='ressources/missing.png') }}"></img>
-			<label>Report Missing Person</label>
+			<label>{{ _('Report Missing Person') }}</label>
 		</button>
 	</div>
 
@@ -74,7 +77,7 @@
 							{% endif %}
 							<h3>{{ missing["FirstName"] }}</h3>
 							<div class="info">
-								<p>{{ missing["Age"] }} yrs</p>
+								<p>{{ missing["Age"] }} {{_('yrs')}}</p>
 								<p>{{ missing["LastKnownLocation"] }}</p>
 							</div>
 						</div>
@@ -90,92 +93,14 @@
 
 	</div>
 
+	<div>
+		<a href="{{ url_for('changeLanguage', lang = 'en') }}">English</a>
+		<a href="{{ url_for('changeLanguage', lang = 'fr') }}">Français</a>
+	</div>
+
 	
 	<!-- JavaScript for dropdown function -->
 	<script src="{{ url_for('static', filename = 'javascript/search.js')}}"></script>
-	<!--
-	<script>
-		// get input/ elements
-		const searchInput = document.getElementById('live-search');
-		const dropdown = document.getElementById('search-dropdown');
-
-		searchInput.addEventListener('input', function()
-		{
-			const query = this.value.trim();
-			if (query.length === 0) {
-				dropdown.innerHTML = '';
-				dropdown.style.display = 'none';
-				return;
-			}
-
-			fetch(`/search_json?query=${encodeURIComponent(query)}`)
-				.then(response => response.json())
-				.then(results => {
-					if (results.length === 0) {
-						dropdown.innerHTML = '<div class = "dropdown-item" >No results found.</div>';
-					}
-					else {
-						dropdown.innerHTML = results.map(item => 
-							`<div class = "dropdown-item" data-mid = "${item.MID}" >${item.FirstName} ${item.LastName}, Age: ${item.Age}</div>`
-						).join('');
-					}
-					dropdown.style.display = 'block';
-
-					// Attach click handler - for each result - navigation
-					Array.from(dropdown.getElementsByClassName('dropdown-item')).forEach(function(elem)
-					{
-						elem.addEventListener('click', function()
-						{
-							const mid = this.getAttribute('data-mid');
-							if (mid) {
-								window.location.href = `/view/${mid}`;
-							}
-						});
-					});
-				});
-		});
-
-		searchInput.addEventListener('blur', function()
-		{
-			setTimeout(() => { dropdown.style.display = 'none'; }, 150);
-		});
-
-		searchInput.addEventListener('focus', function()
-		{
-			if (dropdown.innerHTML.trim() !== '') dropdown.style.display = 'block';
-		});
-
-		// clear the search area when pressed anywhere
-		document.addEventListener('click', function(event)
-		{
-			// get input, dropdown and form elements
-			const searchInput = document.getElementById('live-search');
-			const dropdown = document.getElementById('search-dropdown');
-			const searchForm = searchInput.closest('form');
-
-			if (!searchForm.contains(event.target) && !dropdown.contains(event.target)) {
-				searchInput.value = '';
-				dropdown.style.display = 'none';
-				dropdown.innerHTML = '';
-			}
-		});
-	</script>
-
-	<script>
-		// page reload
-		window.addEventListener('pageshow', function(event) 
-		{
-			const searchInput = document.getElementById('live-search');
-			const dropdown = document.getElementById('search-dropdown');
-
-			if (searchInput) searchInput.value = '';
-
-			if (dropdown) {
-				dropdown.innerHTML = '';
-				dropdown.style.display = 'none';
-			}
-		});
-	</script>
-	-->
 
 </body>
+</html>

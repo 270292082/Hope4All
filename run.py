@@ -1,6 +1,8 @@
 from flask import Flask, request, render_template, redirect, url_for, session
 from random import randint, seed
 
+from flask_babel import Babel, get_locale, gettext
+
 import backend.searchFunction as searchFunction
 import backend.loginPage as loginPage
 import backend.reportMissing as reportMissing
@@ -16,6 +18,27 @@ import backend.env as env
 app = Flask(__name__)
 app.secret_key = 'SECRET KEY'
 db_name = "database/Hope4All.db"
+
+#language
+app.config['BABEL_DEFAULT_LOCALE'] = 'en' #default language english
+LANGUAGES = {'en': 'English', 'fr': 'Français'}
+babel = Babel(app)
+
+def get_locale():
+    lang = session.get('language')
+    if lang in LANGUAGES:
+        return lang
+    return request.accept_languages.best_match(LANGUAGES.keys())
+
+babel = Babel(app, locale_selector = get_locale)
+
+@app.route('/change_language/<lang>')
+def changeLanguage(lang):
+    if lang in LANGUAGES:
+        session['language'] = lang
+        session.permanent = True
+    return redirect(url_for('index'))
+########## language end
 
 
 @app.route('/')
