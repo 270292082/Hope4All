@@ -35,13 +35,14 @@ body {
 
 .header label {
 	font-family: "Open Sans";
-	font-size: 35px;
+	font-size: 2.1rem;
+    margin: 20px;
 }
 
 .field1 {
-    top: 0;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 30px;
 
     width: 100%;
     height: 50vh;

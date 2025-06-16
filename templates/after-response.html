@@ -19,7 +19,7 @@
 
         <div class="response-content">
             <div class="response-left">
-                <div class="photo-box">
+                <div class="profile-picture">
                     {% if image %}
                         <img src="data:image/png;base64,{{ image }}" class="profile-img">
                     {% else %}
@@ -27,38 +27,43 @@
                     {% endif %}
                 </div>
                 <div class="details-co-in">
-                    <div><b>Country</b><br>
+                    <div>Country<br>
                         <span class="data">{{ report.Country or '—' }}</span></div>
-                    <div><b>Incident Related</b><br>
+                    <div>Incident Related<br>
                         <span class="data">{{ report.IncidentRelated or '-' }}</span></div>
                 </div>
             </div>
             <div class="response-right">
-                <div><b>Name</b><br>
+                <div>Name<br>
                     <span class="data">{{ report.MissingFN }} {{ report.MissingLN }}</span></div>
 
-                <div><b>Age</b><br>
+                <div>Age<br>
                     <span class="data">{{ report.Age }}</span></div>
 
-                <div><b>Identification Mark</b><br>
+                <div>Identification Mark<br>
                     <span class="data">{{ report.IdentificationMark or '—' }}</span></div>
 
-                <div><b>Response</b><br>
+                <br>
+
+                <div>Response<br>
                     <span class="data">{{ report.FoundCondition }}</span></div>
 
-                <div><b>Where</b><br>
+                <div>Place Found<br>
                     <span class="data">{{ report.FoundLocation }}</span></div>
 
-                <div><b>When</b><br>
+                <div>Time Found<br>
                     <span class="data">{{ report.FoundDate }}</span></div>
 
-                <div><b>Responder Name</b><br>
+                <div>Responder Name<br>
                     <span class="data">{{ report.ResponderFN }} {{ report.ResponderLN}}</span></div>
 
-                <div><b>Responder Contact Information</b><br>
+                <div>Responder Contact Information<br>
                     <span class="data">{{ report.FoundContact }}</span></div>
             </div>
         </div>
+        <div style="margin: 35px 0 0 70px;">
+			<a href="{{ url_for('index') }}" class="back-btn">&larr; Back to Home</a>
+		</div>
     </div>
 </body>
 </html>
