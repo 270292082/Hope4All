@@ -31,7 +31,7 @@ def found(MID):
         )
         conn.commit()
         conn.close()
-        flash('Report submitted successfully.')
+        #flash('Report submitted successfully.')
         return redirect('/')
     
     conn.close()

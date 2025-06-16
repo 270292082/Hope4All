@@ -21,18 +21,17 @@
 			<div id="search-dropdown" class="search-dropdown" style="display: none;"></div>
 		</form>
 
-		<div class="signContainer">
-			<button onclick="location.href='/login';"><b>Sign In</b></button>
-		</div>
 
-		<div class="languageContainer"> 
-			<button class="language">
-				<img src="{{ url_for('static', filename='ressources/language.png') }}" class="languageIco"></img>
-				<label class="language-current"><b>Eng</b></label>
-			</button>
-		</div>
-
+		<div class="account">
+			<div class="signContainer">
+				<button onclick="location.href='/register';"><b>Sign Up</b></button>
 			</div>
+			<div class="loginContainer">
+				<button onclick="location.href='/login';"><b>Sign In</b></button>
+			</div>
+		</div>
+
+		</div>
 	<div>
 
 	<!-- search results-->
