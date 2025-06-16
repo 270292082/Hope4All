@@ -157,6 +157,11 @@ button {
 	font-size: 15px;
 }
 
+.banner .signContainer button:hover {
+	color: #fff;
+	background-color: #f68282;
+}
+
 .banner .loginContainer {
 	margin: auto;
 	height: 100%;
@@ -174,7 +179,10 @@ button {
 	font-size: 15px;
 }
 
-
+.banner .loginContainer button:hover {
+	color: #fff;
+	background-color: #f68282;
+}
 
 .banner .languageContainer {
 	margin-right: 2vw;
@@ -239,6 +247,12 @@ button {
 	border-radius: 50px;
 	background-color: #e94f4f;
 	border-color : #d14646;
+	box-shadow: 0 6px 24px rgba(0, 0, 0, 0.07);
+}
+
+.reportContainer button:hover {
+	color: #fff;
+	background-color: #f68282;
 }
 
 .reportContainer .report img {
