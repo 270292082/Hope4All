@@ -21,7 +21,8 @@ db_name = "database/Hope4All.db"
 
 #language
 app.config['BABEL_DEFAULT_LOCALE'] = 'en' #default language english
-LANGUAGES = {'en': 'English', 'fr': 'Français'}
+
+LANGUAGES = {'en': 'English', 'fr': 'Français', 'zh_Hans_CN': 'Chinese', 'my_MM' : 'Myanmar'}
 babel = Babel(app)
 
 def get_locale():
@@ -33,10 +34,11 @@ def get_locale():
 babel = Babel(app, locale_selector = get_locale)
 
 @app.route('/change_language/<lang>')
-def changeLanguage(lang):
+def change_language(lang):
     if lang in LANGUAGES:
         session['language'] = lang
         session.permanent = True
+        print(lang)
     return redirect(url_for('index'))
 ########## language end
 

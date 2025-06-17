@@ -1,0 +1,14 @@
+#Step 1
+pybabel extract -F babel.cfg -o messages.pot .
+
+#Step 2
+(to initialize)
+pybabel init -i messages.pot -d translations -l <lang>
+pybabel init -i messages.pot -d translations -l fr
+
+(change init to update after initializing)
+pybabel update -i messages.pot -d translations -l fr
+
+#Step 3
+(Check the messages.pot before compile)
+pybabel compile -d translations

@@ -34,6 +34,18 @@
 			<div id="search-dropdown" class="search-dropdown" style="display: none;"></div>
 		</form>
 
+		<!-- Language selection -->
+		<div class="language-selection-container">
+			<img src="{{ url_for('static', filename = 'ressources/language.png') }}" class="language-icon" id="openLanguageSelection">
+
+			<div class="language-selection" id="languageSelection">
+				<a href="{{ url_for('change_language', lang = 'en') }}">English</a> <br>
+				<a href="{{ url_for('change_language', lang = 'fr') }}">Français</a> <br>
+				<a href="{{ url_for('change_language', lang = 'zh_Hans_CN') }}">中文</a> <br>
+				<a href="{{ url_for('change_language', lang = 'my_MM') }}">မြန်မာစာ</a>
+			</div>
+		</div>
+
 
 		<div class="account">
 			<div class="signContainer">
@@ -93,14 +105,10 @@
 
 	</div>
 
-	<div>
-		<a href="{{ url_for('changeLanguage', lang = 'en') }}">English</a>
-		<a href="{{ url_for('changeLanguage', lang = 'fr') }}">Français</a>
-	</div>
-
 	
 	<!-- JavaScript for dropdown function -->
-	<script src="{{ url_for('static', filename = 'javascript/search.js')}}"></script>
+	<script src="{{ url_for('static', filename = 'javascript/search.js') }}"></script>
+	<script src="{{ url_for('static', filename = 'javascript/language.js') }}"></script>
 
 </body>
 </html>

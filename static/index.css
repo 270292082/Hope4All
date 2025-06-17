@@ -184,6 +184,7 @@ button {
 	background-color: #f68282;
 }
 
+/*
 .banner .languageContainer {
 	margin-right: 2vw;
 	margin-left: 1vw;
@@ -202,7 +203,6 @@ button {
 	height: 100%;
 	width: 100%;
 
-	/*background-color: #F7F0ED*/;
 	background-color: #f7f7f7;
 	border-color : #d14646;
 	border-radius: 40px;
@@ -219,6 +219,7 @@ button {
 	font-size: 15px;
 
 }
+*/
 
 
 
@@ -442,4 +443,65 @@ button {
     color: #fff;
     box-shadow: 0 4px 18px rgba(233,87,87,0.09);
     text-decoration: none;
+}
+
+
+/* Language container part in index.html */
+.language-selection-container {
+	display: flex;
+	align-items: center;
+	margin-left: 50px;
+	position: relative;
+	background-color: #f7f7f7;
+	border-radius: 50%;
+	padding: 5px;
+}
+
+.language-icon {
+	height: 35px;
+	width: 35px;
+	cursor: pointer;
+	border-radius: 50%;
+	background: none;
+	color: #fff;
+}
+
+.language-icon:hover {
+	border-radius: 50%;
+}
+
+.language-selection {
+	display: none;
+    position: absolute;
+    top: 54px;
+    right: 0;
+    min-width: 100px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.16);
+    padding: 18px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.language-selection a {
+    display: block;
+    color: #e94f4f;
+    font-size: 1.08rem;
+	padding: 8px 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.13s;
+	align-items: center;
+	justify-content: center;
+}
+
+.language-selection a:last-child {
+    margin-bottom: 0;
+}
+
+.language-selection a:hover {
+    color: #fff;
+	background-color: #e94f4f;
+	border-radius: 10px;
 }
