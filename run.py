@@ -11,6 +11,7 @@ import backend.confirmMissing as confirmMissing
 import backend.missingPerson as missingPerson
 import backend.editPerson as editPerson
 import backend.env as env
+import backend.languageChange as languageChange
 
 # THINGS LEFT TO DO
 #  Make the database work with the merged branch.
@@ -21,25 +22,12 @@ db_name = "database/Hope4All.db"
 
 #language
 app.config['BABEL_DEFAULT_LOCALE'] = 'en' #default language english
-
-LANGUAGES = {'en': 'English', 'fr': 'Français', 'zh_Hans_CN': 'Chinese', 'my_MM' : 'Myanmar'}
-babel = Babel(app)
-
-def get_locale():
-    lang = session.get('language')
-    if lang in LANGUAGES:
-        return lang
-    return request.accept_languages.best_match(LANGUAGES.keys())
-
-babel = Babel(app, locale_selector = get_locale)
+babel = Babel(app, locale_selector = languageChange.get_locale)
+app.config['LANGUAGES'] = languageChange.LANGUAGES
 
 @app.route('/change_language/<lang>')
 def change_language(lang):
-    if lang in LANGUAGES:
-        session['language'] = lang
-        session.permanent = True
-        print(lang)
-    return redirect(url_for('index'))
+    return languageChange.change_language(lang)
 ########## language end
 
 
@@ -56,6 +44,7 @@ def index():
 # -- Search Function --
 @app.route('/search', methods = ['GET'])
 def search():
+    print(get_locale())
     return searchFunction.search()
 
 # search function json

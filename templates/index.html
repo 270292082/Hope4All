@@ -39,9 +39,10 @@
 			<img src="{{ url_for('static', filename = 'ressources/language.png') }}" class="language-icon" id="openLanguageSelection">
 
 			<div class="language-selection" id="languageSelection">
-				<a href="{{ url_for('change_language', lang = 'en') }}">English</a> <br>
-				<a href="{{ url_for('change_language', lang = 'fr') }}">Français</a> <br>
-				<a href="{{ url_for('change_language', lang = 'zh_Hans_CN') }}">中文</a> <br>
+				<a href="{{ url_for('change_language', lang = 'en') }}">English</a> 
+				<a href="{{ url_for('change_language', lang = 'mi') }}">Te Reo Māori</a>
+				<a href="{{ url_for('change_language', lang = 'fr') }}">Français</a>
+				<a href="{{ url_for('change_language', lang = 'zh_Hans_CN') }}">中文</a>
 				<a href="{{ url_for('change_language', lang = 'my_MM') }}">မြန်မာစာ</a>
 			</div>
 		</div>
@@ -87,7 +88,7 @@
 							{% else %}
 								<img class="profile-picture" src="{{ url_for('static', filename='ressources/pp-placeholder.png') }}">
 							{% endif %}
-							<h3>{{ missing["FirstName"] }}</h3>
+							<h3>{{ missing["FirstName"] }} {{ missing["LastName"]}}</h3>
 							<div class="info">
 								<p>{{ missing["Age"] }} {{_('yrs')}}</p>
 								<p>{{ missing["LastKnownLocation"] }}</p>

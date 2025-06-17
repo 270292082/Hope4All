@@ -1,14 +1,14 @@
-#Step 1
+#Step 1 - everytime we add new information for language change
 pybabel extract -F babel.cfg -o messages.pot .
 
 #Step 2
-(to initialize)
+(to initialize - add new language)
 pybabel init -i messages.pot -d translations -l <lang>
 pybabel init -i messages.pot -d translations -l fr
 
-(change init to update after initializing)
-pybabel update -i messages.pot -d translations -l fr
+(to update all translations list)
+pybabel update -i messages.pot -d translations
 
-#Step 3
+#Step 3 - compile
 (Check the messages.pot before compile)
 pybabel compile -d translations

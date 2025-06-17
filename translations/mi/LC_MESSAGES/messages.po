@@ -1,4 +1,4 @@
-# Chinese (Simplified, China) translations for PROJECT.
+# Māori translations for PROJECT.
 # Copyright (C) 2025 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
@@ -7,12 +7,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-06-17 16:41+1200\n"
-"PO-Revision-Date: 2025-06-17 13:43+1200\n"
+"POT-Creation-Date: 2025-06-17 16:43+1200\n"
+"PO-Revision-Date: 2025-06-17 16:48+1200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: zh_Hans_CN\n"
-"Language-Team: zh_Hans_CN <LL@li.org>\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: mi\n"
+"Language-Team: mi <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,38 +20,37 @@ msgstr ""
 
 #: templates/index.html:30 templates/search-results.html:19
 msgid "Search"
-msgstr "搜索"
+msgstr "Rapu"
 
 #: templates/index.html:52 templates/search-results.html:41
 msgid "Sign Up"
-msgstr "注册"
+msgstr "Rēhita"
 
 #: templates/index.html:55 templates/search-results.html:44
 msgid "Sign In"
-msgstr "登录"
+msgstr "Takiuru"
 
 #: templates/index.html:75
 msgid "Report Missing Person"
-msgstr "报告失踪人员"
+msgstr "Rīpoata Tangata Ngaro"
 
 #: templates/index.html:92
 msgid "yrs"
-msgstr "岁"
+msgstr "tau"
 
 #: templates/search-results.html:69
 msgid "Identification Mark :"
-msgstr "标识特征 :"
+msgstr "Tohu Motuhake:"
 
 #: templates/search-results.html:70
 msgid "Contact Information :"
-msgstr "联系方式 :"
+msgstr "Ngā Pārongo Whakapā:"
 
 #: templates/search-results.html:77
 msgid "No matching results found."
-msgstr "未找到匹配的结果。"
+msgstr "Kāore i kitea he otinga hāngai."
 
 #: templates/search-results.html:82
 msgid "Back to Home"
-msgstr "返回首页"
-
+msgstr "Hoki ki te Kāinga"
 

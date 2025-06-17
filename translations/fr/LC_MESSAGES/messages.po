@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-06-17 13:56+1200\n"
+"POT-Creation-Date: 2025-06-17 16:41+1200\n"
 "PO-Revision-Date: 2025-06-17 10:36+1200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr\n"
@@ -18,23 +18,39 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: templates/index.html:30
+#: templates/index.html:30 templates/search-results.html:19
 msgid "Search"
 msgstr "Rechercher"
 
-#: templates/index.html:40
+#: templates/index.html:52 templates/search-results.html:41
 msgid "Sign Up"
 msgstr "S'inscrire"
 
-#: templates/index.html:43
+#: templates/index.html:55 templates/search-results.html:44
 msgid "Sign In"
 msgstr "Se Connecter"
 
-#: templates/index.html:63
+#: templates/index.html:75
 msgid "Report Missing Person"
 msgstr "Signaler une personne dispaure"
 
-#: templates/index.html:80
+#: templates/index.html:92
 msgid "yrs"
 msgstr "ans"
+
+#: templates/search-results.html:69
+msgid "Identification Mark :"
+msgstr "Marque d’Identification :"
+
+#: templates/search-results.html:70
+msgid "Contact Information :"
+msgstr "Coordonnées :"
+
+#: templates/search-results.html:77
+msgid "No matching results found."
+msgstr "Aucun résultat correspondant trouvé."
+
+#: templates/search-results.html:82
+msgid "Back to Home"
+msgstr "Retour à l'accueil"
 

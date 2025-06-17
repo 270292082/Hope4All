@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang=" ">
+
 <head>
 	<title>Hope For All</title>
 	<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
@@ -9,25 +12,37 @@
 
 
 <body>
-	<!--to fix what ever is put in index.html - haven't fixed anything yet -->
 	<div class="banner">
 		<img src="{{ url_for('static', filename='ressources/logo-white.png')}}" class="logo" onclick="location.href = '/'"></img>
 
 		<form action="{{ url_for('search') }}" class="search" style="display: flex; position: relative; width: 100%;" autocomplete="off">
-			<input type="text" class="searchBar" id="live-search" name="query" autocomplete="off" placeholder="Search...." style="flex: 1;">
+			<input type="text" class="searchBar" id="live-search" name="query" autocomplete="off" placeholder="{{ _('Search') }}...." style="flex: 1;">
 			<button type="submit" style="background: none; border: none; padding: 0; cursor: pointer;">
 				<img src="{{ url_for('static', filename= 'ressources/search.png') }}" class="searchLogo" alt="Search">
 			</button>
 			<div id="search-dropdown" class="search-dropdown" style="display: none;"></div>
 		</form>
 
+		<!-- Language selection -->
+		<div class="language-selection-container">
+			<img src="{{ url_for('static', filename = 'ressources/language.png') }}" class="language-icon" id="openLanguageSelection">
+
+			<div class="language-selection" id="languageSelection">
+				<a href="{{ url_for('change_language', lang = 'en') }}">English</a> 
+				<a href="{{ url_for('change_language', lang = 'mi') }}">Te Reo Māori</a>
+				<a href="{{ url_for('change_language', lang = 'fr') }}">Français</a>
+				<a href="{{ url_for('change_language', lang = 'zh_Hans_CN') }}">中文</a>
+				<a href="{{ url_for('change_language', lang = 'my_MM') }}">မြန်မာစာ</a>
+			</div>
+		</div>
+
 
 		<div class="account">
 			<div class="signContainer">
-				<button onclick="location.href='/register';"><b>Sign Up</b></button>
+				<button onclick="location.href='/register';"><b>{{ _('Sign Up') }}</b></button>
 			</div>
 			<div class="loginContainer">
-				<button onclick="location.href='/login';"><b>Sign In</b></button>
+				<button onclick="location.href='/login';"><b>{{ _('Sign In') }}</b></button>
 			</div>
 		</div>
 
@@ -52,24 +67,27 @@
 								{{ row['FirstName'] }} {{ row['LastName'] }}
 								<span class="search-card-age">({{ row['Age'] }})</span>
 							</div>
-							<div class="search-card-idMark" ><strong>ID Mark:</strong> {{ row['IdentificationMark'] if row['IdentificationMark'] else '-' }}</div>
-							<div class="search-card-contact"><strong>Contact Info:</strong> {{ row['Contact'] if row['Contact'] else '-' }}</div>
+							<div class="search-card-idMark" ><strong>{{ _('Identification Mark :') }}</strong> {{ row['IdentificationMark'] if row['IdentificationMark'] else '-' }}</div>
+							<div class="search-card-contact"><strong>{{ _('Contact Information :') }}</strong> {{ row['Contact'] if row['Contact'] else '-' }}</div>
 						</div>
 					</div>
 				</a>
 				{% endfor %}
 			{% else %}
 				<div class="no-results">
-					<p>No matching results found.</p>
+					<p>{{ _('No matching results found.') }}</p>
 				</div>
 			{% endif %}
 		</div>
 		<div style="margin: 35px 0 0 70px;">
-			<a href="{{ url_for('index') }}" class="back-btn">&larr; Back to Home</a>
+			<a href="{{ url_for('index') }}" class="back-btn">&larr; {{ _('Back to Home') }}</a>
 		</div>
 	{% endif %}
 
 
 	<script src="{{ url_for('static', filename = 'javascript/search.js') }}"></script>
+	<script src="{{ url_for('static', filename = 'javascript/language.js') }}"></script>
 
 </body>
+
+</html>

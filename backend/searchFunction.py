@@ -4,6 +4,7 @@ from backend.env import *
 from backend.missingPerson import *
 
 from flask import jsonify
+from flask_babel import get_locale
 
 def search():
     query = request.args.get('query','').strip().lower()

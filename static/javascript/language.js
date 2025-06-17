@@ -21,5 +21,13 @@ document.addEventListener('DOMContentLoaded', function()
         selection.addEventListener('click', function(event) {
             event.stopPropagation();
         });
+
+        // reload to prevent language change error
+        //selection.querySelectorAll('.language-selection a').forEach(function(a) {
+            //a.addEventListener('click', function(e) {
+                //e.preventDefault();
+                //window.location.href = this.href;
+            //});
+        //});
     }
-})
+});
