@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-06-17 16:43+1200\n"
-"PO-Revision-Date: 2025-06-17 16:48+1200\n"
+"POT-Creation-Date: 2025-06-18 01:50+1200\n"
+"PO-Revision-Date: 2025-06-18 01:51+1200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: mi\n"
 "Language-Team: mi <LL@li.org>\n"
@@ -20,37 +20,85 @@ msgstr ""
 
 #: templates/index.html:30 templates/search-results.html:19
 msgid "Search"
-msgstr "Rapu"
+msgstr "Rapua"
 
-#: templates/index.html:52 templates/search-results.html:41
+#: templates/index.html:53 templates/search-results.html:42
 msgid "Sign Up"
 msgstr "Rēhita"
 
-#: templates/index.html:55 templates/search-results.html:44
+#: templates/index.html:56 templates/search-results.html:45
 msgid "Sign In"
 msgstr "Takiuru"
 
-#: templates/index.html:75
+#: templates/index.html:76
 msgid "Report Missing Person"
-msgstr "Rīpoata Tangata Ngaro"
+msgstr "Pūrongo Tangata Ngaro"
 
-#: templates/index.html:92
+#: templates/index.html:93
 msgid "yrs"
 msgstr "tau"
 
-#: templates/search-results.html:69
+#: templates/missing-person.html:17
+msgid "Missing Person Information"
+msgstr "Ngā Mōhiohio mō te Tangata Ngaro"
+
+#: templates/missing-person.html:29
+msgid "Country"
+msgstr "Whenua"
+
+#: templates/missing-person.html:31
+msgid "Incident Related"
+msgstr "Pānga ki tētahi Take"
+
+#: templates/missing-person.html:37
+msgid "Name"
+msgstr "Ingoa"
+
+#: templates/missing-person.html:40
+msgid "Age"
+msgstr "Tau"
+
+#: templates/missing-person.html:43
+msgid "Identification Mark"
+msgstr "Tohu Motuhake"
+
+#: templates/missing-person.html:46
+msgid "Reporter Contact Information"
+msgstr "Ngā Mōhiohio Whakapā a te Kaituku Pūrongo"
+
+#: templates/missing-person.html:49
+msgid "Missing Since"
+msgstr "Ngaro Mai i te"
+
+#: templates/missing-person.html:52
+msgid "Last Known Location"
+msgstr "Te Wāhi i Mōhiotia Whakamutunga"
+
+#: templates/missing-person.html:55
+msgid "Additional Information"
+msgstr "Mōhiohio Anō"
+
+#: templates/missing-person.html:102
+msgid "Edit"
+msgstr "Whakatika"
+
+#: templates/missing-person.html:103
+msgid "Found!"
+msgstr "Kua Kimihia!"
+
+#: templates/search-results.html:70
 msgid "Identification Mark :"
 msgstr "Tohu Motuhake:"
 
-#: templates/search-results.html:70
+#: templates/search-results.html:71
 msgid "Contact Information :"
-msgstr "Ngā Pārongo Whakapā:"
+msgstr "Ngā Mōhiohio Whakapā:"
 
-#: templates/search-results.html:77
+#: templates/search-results.html:78
 msgid "No matching results found."
-msgstr "Kāore i kitea he otinga hāngai."
+msgstr Kāore i kitea he hua e ōrite ana."
 
-#: templates/search-results.html:82
+#: templates/search-results.html:83
 msgid "Back to Home"
 msgstr "Hoki ki te Kāinga"
 

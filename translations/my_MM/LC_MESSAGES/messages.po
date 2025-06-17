@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-06-17 16:41+1200\n"
-"PO-Revision-Date: 2025-06-17 13:56+1200\n"
+"POT-Creation-Date: 2025-06-18 01:50+1200\n"
+"PO-Revision-Date: 2025-06-18 01:51+1200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: my_MM\n"
 "Language-Team: my_MM <LL@li.org>\n"
@@ -22,35 +22,83 @@ msgstr ""
 msgid "Search"
 msgstr "ရှာဖွေရန်"
 
-#: templates/index.html:52 templates/search-results.html:41
+#: templates/index.html:53 templates/search-results.html:42
 msgid "Sign Up"
-msgstr "စာရင်းသွင်း"
+msgstr "အကောင့်ဖွင့်"
 
-#: templates/index.html:55 templates/search-results.html:44
+#: templates/index.html:56 templates/search-results.html:45
 msgid "Sign In"
-msgstr "လေ့ာဂ်အင်"
+msgstr "လော့ဂ်အင်"
 
-#: templates/index.html:75
+#: templates/index.html:76
 msgid "Report Missing Person"
 msgstr "လူပျောက်ကြော်ငြာမည်"
 
-#: templates/index.html:92
+#: templates/index.html:93
 msgid "yrs"
 msgstr "နှစ်"
 
-#: templates/search-results.html:69
-msgid "Identification Mark :"
-msgstr "ထင်ရှားသောအမှတ်အသား :"
+#: templates/missing-person.html:17
+msgid "Missing Person Information"
+msgstr "ပျောက်ဆုံးနေသူ၏ အချက်အလက်များ"
+
+#: templates/missing-person.html:29
+msgid "Country"
+msgstr "နိုင်ငံ"
+
+#: templates/missing-person.html:31
+msgid "Incident Related"
+msgstr "သက်ဆိုင်ရာဖြစ်စဉ်"
+
+#: templates/missing-person.html:37
+msgid "Name"
+msgstr "အမည်"
+
+#: templates/missing-person.html:40
+msgid "Age"
+msgstr "အသက်"
+
+#: templates/missing-person.html:43
+msgid "Identification Mark"
+msgstr "ထင်ရှားသောအမှတ်အသား"
+
+#: templates/missing-person.html:46
+msgid "Reporter Contact Information"
+msgstr "တွေ့ရှိပါက ဆက်သွယ်ရန်"
+
+#: templates/missing-person.html:49
+msgid "Missing Since"
+msgstr "စတင်ပျောက်ဆုံးသောနေ့စွဲ"
+
+#: templates/missing-person.html:52
+msgid "Last Known Location"
+msgstr "နောက်ဆုံးသိရှိသည့်တည်နေရာ"
+
+#: templates/missing-person.html:55
+msgid "Additional Information"
+msgstr "ထပ်ဆောင်း အချက်အလက်"
+
+#: templates/missing-person.html:102
+msgid "Edit"
+msgstr "ပြင်ဆင်ရန်"
+
+#: templates/missing-person.html:103
+msgid "Found!"
+msgstr "တွေ့ရှိခဲ့သည်!"
 
 #: templates/search-results.html:70
+msgid "Identification Mark :"
+msgstr "ထင်ရှားသောအမှတ်အသား -"
+
+#: templates/search-results.html:71
 msgid "Contact Information :"
-msgstr "ဆက်သွယ်ရန် :"
+msgstr "ဆက်သွယ်ရန်အချက်အလက် -"
 
-#: templates/search-results.html:77
+#: templates/search-results.html:78
 msgid "No matching results found."
-msgstr "သင့်ရှာဖွေမှုနှင့် ကိုက်ညီသောရလဒ်များ မတွေ့ပါ။"
+msgstr "ကိုက်ညီသောရလဒ်များ မတွေ့ပါ။"
 
-#: templates/search-results.html:82
+#: templates/search-results.html:83
 msgid "Back to Home"
-msgstr "ပင်မစာမျက်နှာသို့ ပြန်သွားရန်"
+msgstr "ပင်မစာမျက်နှာသို့ပြန်သွားရန်"
 

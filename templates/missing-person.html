@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="{{ current_lang }}">
+
 <head>
 	<title>Report Missing Person</title>
 	<link rel="stylesheet" href="{{ url_for('static', filename='missing-person.css') }}">
@@ -11,9 +14,50 @@
 	<div class="content-container">
 		<button class="close" onclick="window.location.href = '/';">&times;</button>
 		<div class="header">
-			<label><b>Missing Person Information</b></label>
+			<label><b>{{_('Missing Person Information')}}</b></label>
 		</div>
 
+		<div class="response-content">
+			<div class="response-left">
+				{% if image %}
+					<img class="profile-picture" src="data:image/jpg;base64,{{ image }}">
+				{% else %}
+					<img class="profile-picture" src="{{ url_for('static', filename = 'ressources/pp-placeholder.png') }}" >
+				{% endif %}
+				
+				<div class="details-co-in">
+					<div>{{_('Country')}}<br>
+						<span class="data">{{ missingPerson[11] or '-' }}</span></div>
+					<div>{{_('Incident Related')}}<br>
+						<span class="data">{{ missingPerson[10] or '-' }}</span></div>
+				</div>
+			</div>
+		
+			<div class="response-right">
+				<div>{{_('Name')}}<br>
+					<span class="data">{{ missingPerson[2] }} {{ missingPerson[3] }}</span></div>
+			
+				<div>{{_('Age')}}<br>
+					<span class="data">{{ missingPerson[5] }}</span></div>
+			
+				<div>{{_('Identification Mark')}}<br>
+					<span class="data">{{ missingPerson[6] }}</span></div>
+			
+				<div>{{_('Reporter Contact Information')}}<br>
+					<span class="data">{{ missingPerson[7] }}</span></div>
+			
+				<div>{{_('Missing Since')}}<br>
+					<span class="data">{{ missingPerson[8] }}</span></div>
+			
+				<div>{{_('Last Known Location')}}<br>
+					<span class="data">{{ missingPerson[9] }}</span></div>
+			
+				<div>{{_('Additional Information')}}<br>
+					<span class="data">{{ missingPerson[14] or 'None' }}</span></div>
+			</div>
+		</div>
+		
+		<!--
 		<div class="field1">
 			{% if image %}
 				<img class="profile-picture" src="data:image/jpg;base64,{{ image }}"></img>
@@ -22,41 +66,44 @@
 			{% endif %}
 			<div class="info1">
 				<label>Name</label>
-				<label class="oname"><b>{{ missingPerson[2] }} {{ missingPerson[3] }}</b></label>
-				<br>
+				<label class="oname data"><b>{{ missingPerson[2] }} {{ missingPerson[3] }}</b></label>
+				
 				<label>Age</label>
-				<label class="oage"><b>{{ missingPerson[5] }}</b></label>
-				<br>
+				<label class="oage data"><b>{{ missingPerson[5] }}</b></label>
+				
 				<label>Identification Mark</label>
-				<label class="oidm"><b>{{ missingPerson[6] }}</b></label>
-				<br>
+				<label class="oidm data"><b>{{ missingPerson[6] }}</b></label>
+				
 				<label>Reporter Contact Information</label>
-				<label class="ocontact"><b>{{ missingPerson[7] }}</b></label>
-				<br>
+				<label class="ocontact data"><b>{{ missingPerson[7] }}</b></label>
+				
 				<label>Missing Since</label>
-				<label class="omissing"><b>{{ missingPerson[8] }}</b></label>
-				<br>
+				<label class="omissing data"><b>{{ missingPerson[8] }}</b></label>
+				
 				<label>Last Known Location</label>
-				<label class="ollocation"><b>{{ missingPerson[9] }}</b></label>
+				<label class="ollocation data"><b>{{ missingPerson[9] }}</b></label>
+				
+				<label>Additional Information</label>
+				<label class="notes data"><b>{{ missingPerson[14] or 'None' }}</b></label>
 			</div>
 		</div>
 		<div class="field2">
 			<div class="info2">
-				<label>Incident Related</label>
-				<label><b>{{ missingPerson[10] or '-' }}</b></label>
-			</div>
-			<div class="info3">
 				<label>Country</label>
-				<label><b>{{ missingPerson[11] or '-' }}</b></label>
+				<label class="data"><b>{{ missingPerson[11] or '-' }}</b></label>
+				<br>
+				<label>Incident Related</label>
+				<label class="data"><b>{{ missingPerson[10] or '-' }}</b></label>
 			</div>
-			<div class="info4">
-				<label>Additional Information</label>
-				<label class="notes"><b>{{ missingPerson[14] or 'None' }}</b></label>
-			</div>
+
 		</div>
+		-->
 		<div class="buttons">
-			<button class="edit" onclick="location.href = '/edit/{{ missingPerson[0]}}'"><b>Edit</b></button>
-			<button class="found" onclick="location.href = '/confirm/{{ missingPerson[0] }}'"><b>Found!</b></button>
+			<button class="edit" onclick="location.href = '/edit/{{ missingPerson[0]}}'"><b>{{_('Edit')}}</b></button>
+			<button class="found" onclick="location.href = '/confirm/{{ missingPerson[0] }}'"><b>{{_('Found!')}}</b></button>
 		</div>
 	</div>
+
 <body>
+
+</html>

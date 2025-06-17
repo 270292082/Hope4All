@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-06-17 16:41+1200\n"
-"PO-Revision-Date: 2025-06-17 13:43+1200\n"
+"POT-Creation-Date: 2025-06-18 01:50+1200\n"
+"PO-Revision-Date: 2025-06-18 01:51+1200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_Hans_CN\n"
 "Language-Team: zh_Hans_CN <LL@li.org>\n"
@@ -22,36 +22,83 @@ msgstr ""
 msgid "Search"
 msgstr "搜索"
 
-#: templates/index.html:52 templates/search-results.html:41
+#: templates/index.html:53 templates/search-results.html:42
 msgid "Sign Up"
 msgstr "注册"
 
-#: templates/index.html:55 templates/search-results.html:44
+#: templates/index.html:56 templates/search-results.html:45
 msgid "Sign In"
 msgstr "登录"
 
-#: templates/index.html:75
+#: templates/index.html:76
 msgid "Report Missing Person"
 msgstr "报告失踪人员"
 
-#: templates/index.html:92
+#: templates/index.html:93
 msgid "yrs"
 msgstr "岁"
 
-#: templates/search-results.html:69
-msgid "Identification Mark :"
-msgstr "标识特征 :"
+#: templates/missing-person.html:17
+msgid "Missing Person Information"
+msgstr "失踪人员信息"
+
+#: templates/missing-person.html:29
+msgid "Country"
+msgstr "国家"
+
+#: templates/missing-person.html:31
+msgid "Incident Related"
+msgstr "相关事件"
+
+#: templates/missing-person.html:37
+msgid "Name"
+msgstr "姓名"
+
+#: templates/missing-person.html:40
+msgid "Age"
+msgstr "年龄"
+
+#: templates/missing-person.html:43
+msgid "Identification Mark"
+msgstr "身体特征"
+
+#: templates/missing-person.html:46
+msgid "Reporter Contact Information"
+msgstr "报告人联系方式"
+
+#: templates/missing-person.html:49
+msgid "Missing Since"
+msgstr "失踪时间"
+
+#: templates/missing-person.html:52
+msgid "Last Known Location"
+msgstr "最后已知地点"
+
+#: templates/missing-person.html:55
+msgid "Additional Information"
+msgstr "补充信息"
+
+#: templates/missing-person.html:102
+msgid "Edit"
+msgstr "编辑"
+
+#: templates/missing-person.html:103
+msgid "Found!"
+msgstr "已找到！"
 
 #: templates/search-results.html:70
-msgid "Contact Information :"
-msgstr "联系方式 :"
+msgid "Identification Mark :"
+msgstr "身体特征 ："
 
-#: templates/search-results.html:77
+#: templates/search-results.html:71
+msgid "Contact Information :"
+msgstr "联系方式 ："
+
+#: templates/search-results.html:78
 msgid "No matching results found."
 msgstr "未找到匹配的结果。"
 
-#: templates/search-results.html:82
+#: templates/search-results.html:83
 msgid "Back to Home"
 msgstr "返回首页"
-
 

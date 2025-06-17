@@ -12,10 +12,25 @@ body {
     white-space: normal;
 }
 
+.content-container {
+    background: #fff;
+    width: 100%;
+    max-width: 70vw;
+    margin: 40px auto;
+    border-radius: 30px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    padding: 38px 44px;
+    position: relative;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .close {
     position: absolute;
-    top: 10px;
-    right: 20px;
+    top: 15px;
+    right: 0;
     background: none;
     border: none;
     font-size: 50px;
@@ -39,16 +54,18 @@ body {
     margin: 20px;
 }
 
+/*
 .field1 {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
 
     width: 100%;
-    height: 50vh;
-    
+    height: auto;
+    margin-top: 35px; 
+    margin-left: 5vw;
 }
-
 
 .field1 .info1 {
     display: inline-block;
@@ -63,19 +80,31 @@ body {
     border-radius: 10px;
     height: 100%;
     margin-left: 1w;
-    width: 30vw;
+    width: 20vw;
+    max-width: 30vw;
     object-fit: cover;
-
 }
 
 .field1 .info1 label {
-    display: grid;
+    display: block;
+    margin-bottom: 7px;
+    font-size: 1.02rem;
+    color: #242424;
+    letter-spacing: 0.01em;
+}
+
+.field1 .info1 .data {
+    margin-bottom: 16px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #111;
 }
 
 .field2 {
     padding-top: 1.5vh;
     width: 100%;
-    height: 26vh;
+    height: 100%;
+    max-height: 20vh;
 }
 
 .field2 .info2 {
@@ -85,53 +114,42 @@ body {
 }
 .field2 .info2 label{
     display: grid;
+    font-size: 1.02rem;
 }
-
-.field2 .info3 {
-    display: inline-block;
-    height: 40%;
-    width: calc(50% - 2px);
+.field2 .info2 .data {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: 2px;
 }
-.field2 .info3 label{
-    display: grid;
-}
-
-.field2 .info4 {
-    width: 100%;
-    height: 60%;
-    display: grid;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
-}
-.field2 .info4 .notes {
-    width: 100%;
-}
+*/
 
 button {
     margin: auto;
     display: flex;
     justify-content: center;
-    text-align: center;
-    line-height: 6vh;
+    align-items: center;
     border-radius: 30px;
     height: 6vh;
     width: 20vh;
     background-color: grey;
     color: black;
     border: 0px;
-    font-size: 16px;
-    font-family: 'Open Sans';
+    font-size: 2.1vmin; 
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
+    padding: 0 2vw;
+    min-width: 180px;
+    min-height: 45px;
 }
 
 .buttons {
     display: flex;
-    position: relative;
-    justify-content: space-between;
-    width: 40%;
-    margin: auto;
-    margin-top: 150px;
+    justify-content: center;
+    align-items: center;
+    gap: 10vw;
+    flex-wrap: wrap;
+    width: auto;
+    margin-top: 40px;
     padding-bottom: 30px;
 }
 
@@ -139,9 +157,106 @@ button {
     background-color: #e94f4f;
     color: #fff;
     cursor: pointer;
-    font-size: 20px; 
+    font-size: 1.1rem;
+    padding: 1vh 2vw;
 }
 
 .buttons .edit {
     background-color: grey;
+}
+
+.buttons .edit:hover {
+    background-color: #fff;
+    color: grey;
+    border: solid grey;
+}
+
+.buttons .found:hover {
+    background-color: #fff;
+    color: #e94f4f;
+    border: solid #e94f4f;
+}
+
+/* New contents css styles */
+.response-content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3vw;
+    margin-top: 30px;
+}
+
+.profile-picture {
+    width: 20vw;
+    max-width: 30vw;
+    height: 100%;
+    max-height: 40vh;
+    object-fit: cover;
+    border-radius: 16px;
+    background: #f3f3f3;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    border: 2px solid #fff;
+}
+
+.response-left {
+    flex: 1.1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin-left: 30px;
+    gap: 10px;
+}
+
+.response-left > div {
+    margin-bottom: 12px;
+    font-size: 1.02rem;
+}
+
+.response-left .data {
+    display: block;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-top: 2px;
+    margin-bottom: 20px;
+}
+
+.response-right {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+}
+
+.response-right > div {
+    margin-bottom: 12px;
+    font-size: 1.02rem;
+}
+
+.response-right .data {
+    display: block;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-top: 2px;
+    margin-bottom: 8px;
+}
+
+.details-co-in {
+    margin-top: 16px;
+    width: 20vw;
+    max-width: 30vw;
+}
+
+.details-co-in .data {
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: block;
+    margin-top: 1.5px;
+    letter-spacing: 0.01rem;
 }

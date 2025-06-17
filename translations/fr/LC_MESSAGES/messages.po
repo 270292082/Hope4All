@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-06-17 16:41+1200\n"
-"PO-Revision-Date: 2025-06-17 10:36+1200\n"
+"POT-Creation-Date: 2025-06-18 01:50+1200\n"
+"PO-Revision-Date: 2025-06-18 01:51+1200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr\n"
 "Language-Team: fr <LL@li.org>\n"
@@ -22,35 +22,83 @@ msgstr ""
 msgid "Search"
 msgstr "Rechercher"
 
-#: templates/index.html:52 templates/search-results.html:41
+#: templates/index.html:53 templates/search-results.html:42
 msgid "Sign Up"
 msgstr "S'inscrire"
 
-#: templates/index.html:55 templates/search-results.html:44
+#: templates/index.html:56 templates/search-results.html:45
 msgid "Sign In"
 msgstr "Se Connecter"
 
-#: templates/index.html:75
+#: templates/index.html:76
 msgid "Report Missing Person"
-msgstr "Signaler une personne dispaure"
+msgstr "Signaler une personne disparue"
 
-#: templates/index.html:92
+#: templates/index.html:93
 msgid "yrs"
 msgstr "ans"
 
-#: templates/search-results.html:69
-msgid "Identification Mark :"
-msgstr "Marque d’Identification :"
+#: templates/missing-person.html:17
+msgid "Missing Person Information"
+msgstr Informations Sur la Personne Disparue"
+
+#: templates/missing-person.html:29
+msgid "Country"
+msgstr "Pays"
+
+#: templates/missing-person.html:31
+msgid "Incident Related"
+msgstr "Incident Lie"
+
+#: templates/missing-person.html:37
+msgid "Name"
+msgstr "Nom"
+
+#: templates/missing-person.html:40
+msgid "Age"
+msgstr "Âge"
+
+#: templates/missing-person.html:43
+msgid "Identification Mark"
+msgstr "Signe distinctif"
+
+#: templates/missing-person.html:46
+msgid "Reporter Contact Information"
+msgstr "Coordonnées du déclarant"
+
+#: templates/missing-person.html:49
+msgid "Missing Since"
+msgstr "Disparu depuis le"
+
+#: templates/missing-person.html:52
+msgid "Last Known Location"
+msgstr "Dernier lieu connu"
+
+#: templates/missing-person.html:55
+msgid "Additional Information"
+msgstr "Informations supplémentaires"
+
+#: templates/missing-person.html:102
+msgid "Edit"
+msgstr "Modifier"
+
+#: templates/missing-person.html:103
+msgid "Found!"
+msgstr "Retrouvé!"
 
 #: templates/search-results.html:70
+msgid "Identification Mark :"
+msgstr "Signe distinctif :"
+
+#: templates/search-results.html:71
 msgid "Contact Information :"
 msgstr "Coordonnées :"
 
-#: templates/search-results.html:77
+#: templates/search-results.html:78
 msgid "No matching results found."
 msgstr "Aucun résultat correspondant trouvé."
 
-#: templates/search-results.html:82
+#: templates/search-results.html:83
 msgid "Back to Home"
-msgstr "Retour à l'accueil"
+msgstr "Retour à l’accueil"
 

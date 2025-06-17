@@ -12,6 +12,7 @@ def get_locale():
     lang = session.get('language')
     if lang in LANGUAGES:
         return lang
+    #print(lang)
     return request.accept_languages.best_match(LANGUAGES.keys())
 
 

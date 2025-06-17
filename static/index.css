@@ -295,7 +295,7 @@ button {
 	height: 250px; 
 	width: 150px;
 	margin-top: 40px;
-	height: 320px; 
+	height: 340px; 
 	width: 250px;
 	text-align: center;
 }
@@ -319,6 +319,7 @@ button {
 	
 	max-height: 100%;
 	max-width: 100%;
+	margin-top: 5px;
 
 }
 
