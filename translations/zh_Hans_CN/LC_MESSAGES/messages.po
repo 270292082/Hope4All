@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-06-18 01:50+1200\n"
+"POT-Creation-Date: 2025-06-23 22:59+1200\n"
 "PO-Revision-Date: 2025-06-18 01:51+1200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_Hans_CN\n"
@@ -22,19 +22,23 @@ msgstr ""
 msgid "Search"
 msgstr "搜索"
 
-#: templates/index.html:53 templates/search-results.html:42
+#: templates/index.html:54 templates/search-results.html:43
+msgid "Logout"
+msgstr "退出登录"
+
+#: templates/index.html:59 templates/search-results.html:47
 msgid "Sign Up"
 msgstr "注册"
 
-#: templates/index.html:56 templates/search-results.html:45
+#: templates/index.html:62 templates/search-results.html:50
 msgid "Sign In"
 msgstr "登录"
 
-#: templates/index.html:76
+#: templates/index.html:82
 msgid "Report Missing Person"
 msgstr "报告失踪人员"
 
-#: templates/index.html:93
+#: templates/index.html:99
 msgid "yrs"
 msgstr "岁"
 
@@ -86,19 +90,19 @@ msgstr "编辑"
 msgid "Found!"
 msgstr "已找到！"
 
-#: templates/search-results.html:70
+#: templates/search-results.html:75
 msgid "Identification Mark :"
 msgstr "身体特征 ："
 
-#: templates/search-results.html:71
+#: templates/search-results.html:76
 msgid "Contact Information :"
 msgstr "联系方式 ："
 
-#: templates/search-results.html:78
+#: templates/search-results.html:83
 msgid "No matching results found."
 msgstr "未找到匹配的结果。"
 
-#: templates/search-results.html:83
+#: templates/search-results.html:88
 msgid "Back to Home"
 msgstr "返回首页"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-06-18 01:50+1200\n"
+"POT-Creation-Date: 2025-06-23 22:59+1200\n"
 "PO-Revision-Date: 2025-06-18 01:51+1200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: mi\n"
@@ -22,19 +22,23 @@ msgstr ""
 msgid "Search"
 msgstr "Rapua"
 
-#: templates/index.html:53 templates/search-results.html:42
+#: templates/index.html:54 templates/search-results.html:43
+msgid "Logout"
+msgstr "Takiputa"
+
+#: templates/index.html:59 templates/search-results.html:47
 msgid "Sign Up"
 msgstr "Rēhita"
 
-#: templates/index.html:56 templates/search-results.html:45
+#: templates/index.html:62 templates/search-results.html:50
 msgid "Sign In"
 msgstr "Takiuru"
 
-#: templates/index.html:76
+#: templates/index.html:82
 msgid "Report Missing Person"
 msgstr "Pūrongo Tangata Ngaro"
 
-#: templates/index.html:93
+#: templates/index.html:99
 msgid "yrs"
 msgstr "tau"
 
@@ -86,19 +90,19 @@ msgstr "Whakatika"
 msgid "Found!"
 msgstr "Kua Kimihia!"
 
-#: templates/search-results.html:70
+#: templates/search-results.html:75
 msgid "Identification Mark :"
 msgstr "Tohu Motuhake:"
 
-#: templates/search-results.html:71
+#: templates/search-results.html:76
 msgid "Contact Information :"
 msgstr "Ngā Mōhiohio Whakapā:"
 
-#: templates/search-results.html:78
-msgid "No matching results found."
-msgstr Kāore i kitea he hua e ōrite ana."
-
 #: templates/search-results.html:83
+msgid "No matching results found."
+msgstr "āore i kitea he hua e ōrite ana."
+
+#: templates/search-results.html:88
 msgid "Back to Home"
 msgstr "Hoki ki te Kāinga"
 
