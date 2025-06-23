@@ -12,8 +12,8 @@ def login():
 
         if user:
             if user['Password'] == password:
-                session['userEmail'] = email
-                flash('Login Successful', 'success')
+                session['email'] = email
+                #flash('Login Successful', 'success')
                 #return redirect(url_for('/'))
 
                 # redirect to last accessed page
@@ -71,6 +71,7 @@ def register():
 
 
 def logout():
-    session.pop('user', None)
-    flash ('Logged out successfully')
+    session.pop('email', None)
+    #session.pop('language', None)
+    #flash ('Logged out successfully')
     return redirect('/')

@@ -38,16 +38,22 @@
 
 
 		<div class="account">
-			<div class="signContainer">
-				<button onclick="location.href='/register';"><b>{{ _('Sign Up') }}</b></button>
-			</div>
-			<div class="loginContainer">
-				<button onclick="location.href='/login';"><b>{{ _('Sign In') }}</b></button>
-			</div>
+			{% if session.get('email') %}
+				<div class = "loginContainer">
+					<button onclick="location.href = '/logout';"><b>{{ _('Logout') }}</b></button>
+				</div>
+			
+			{% else %}
+				<div class="signContainer">
+					<button onclick="location.href='/register';"><b>{{ _('Sign Up') }}</b></button>
+				</div>
+				<div class="loginContainer">
+					<button onclick="location.href='/login';"><b>{{ _('Sign In') }}</b></button>
+				</div>
+			{% endif %}
 		</div>
 
-		</div>
-	<div>
+	</div>
 
 	<!-- search results-->
 	{% if search_term %}

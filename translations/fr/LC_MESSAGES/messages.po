@@ -40,7 +40,7 @@ msgstr "ans"
 
 #: templates/missing-person.html:17
 msgid "Missing Person Information"
-msgstr Informations Sur la Personne Disparue"
+msgstr "Informations Sur la Personne Disparue"
 
 #: templates/missing-person.html:29
 msgid "Country"
