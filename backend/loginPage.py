@@ -1,4 +1,4 @@
-from flask import request, session, flash, redirect, url_for, render_template
+from flask import request, session, flash, redirect, url_for, render_template, make_response
 from backend.env import *
 
 def login():
@@ -27,6 +27,12 @@ def login():
         else:
             flash('Account not found. Please register.', 'error')
             return redirect('/login')
+    
+    #clear flash message
+    response = make_response(render_template('login-page.html'))
+    response.headers['Cache-Control'] = 'no-store, no-cache, must-revalidate, post-check = 0, pre-check = 0, max-age = 0'
+    response.headers['Pragma'] = 'no-cache'
+    return response
     
     return render_template('login-page.html')
 

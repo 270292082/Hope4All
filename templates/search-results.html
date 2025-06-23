@@ -38,11 +38,10 @@
 
 
 		<div class="account">
-			{% if session.get('email') %}
-				<div class = "loginContainer">
+			{% if session.get('email') %}			
+				<div class="loginContainer">
 					<button onclick="location.href = '/logout';"><b>{{ _('Logout') }}</b></button>
 				</div>
-			
 			{% else %}
 				<div class="signContainer">
 					<button onclick="location.href='/register';"><b>{{ _('Sign Up') }}</b></button>
