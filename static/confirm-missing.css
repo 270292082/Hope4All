@@ -87,7 +87,8 @@ body
 {
     width: 10vw;
     min-width: 250px;
-    height: 20vh;
+    height: 30vh;
+    min-height: 20vh;
     object-fit: cover;
     border-radius: 8px;
 }

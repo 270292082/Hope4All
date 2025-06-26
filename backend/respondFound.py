@@ -13,7 +13,7 @@ def found(MID):
 
     conn = db_connection()
     missingPerson = conn.execute('SELECT * FROM Missing WHERE MID = ?', (MID,)).fetchone()
-    rescuer = conn.execute('SELECT * FROM Rescuer WHERE Email = ?', (session['userEmail'],)).fetchone()
+    rescuer = conn.execute('SELECT * FROM Rescuer WHERE Email = ?', (session['email'],)).fetchone()
 
     if request.method == 'POST':
         foundLocation = request.form['foundLocation']

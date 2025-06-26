@@ -65,7 +65,7 @@ def register():
             return redirect('/login')
         
         conn.execute(
-            'INSERT INTO Rescuer (FirstName, LastName, DOB, Contact, Role, Email, Password) VALUES (?,?,?,?,?,?,?)', (fname[0], lname[1], dob, contact, role, email, password)
+            'INSERT INTO Rescuer (FirstName, LastName, DOB, Contact, Role, Email, Password) VALUES (?,?,?,?,?,?,?)', (fname, lname, dob, contact, role, email, password)
         )
         conn.commit()
         conn.close()
