@@ -4,7 +4,7 @@ from backend.missingPerson import get_image
 
 def found(MID):
     #check user login
-    if 'userEmail' not in session:
+    if 'email' not in session:
         #save current page url before redirecting to login
         session['next'] = url_for('RF_found', MID = MID)
 
